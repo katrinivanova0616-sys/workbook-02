@@ -1013,6 +1013,48 @@ a.need-i:hover{translate:0 -4px;box-shadow:0 18px 36px rgba(255,46,151,.16)}
   .rf-hint{font-size:13px}
 }
 @media (min-width:861px){.folders{padding-left:10px;padding-right:10px}.folder-btn{padding-left:2px;padding-right:2px;min-width:0}.folder-btn .flabel{font-size:12.5px}.folder-btn .ficon{transform:scale(.92)}}
+/* format diagrams */
+.fm-over{--u:.115px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:22px 26px;margin:18px 0 14px}
+.fm-over figure,.fm-pair figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.fm-o{width:calc(var(--w)*var(--u));height:calc(var(--h)*var(--u));border-radius:14px;display:grid;place-items:center;background:linear-gradient(165deg,#ffd1e8,#ff8ccb);border:2px solid #fff;box-shadow:0 0 0 1.5px rgba(255,46,151,.35),0 12px 24px rgba(255,46,151,.18)}
+.fm-o.b{background:linear-gradient(165deg,#d6efff,#7cc4ff);box-shadow:0 0 0 1.5px rgba(30,155,255,.35),0 12px 24px rgba(30,155,255,.18)}
+.fm-o span{font:400 13px var(--pixel);color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.12)}
+figcaption{font:500 12px 'JetBrains Mono',monospace;color:#8a8a99;text-align:center}
+figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);margin-bottom:2px}
+.fm-wrap{display:flex;gap:30px;align-items:center;margin-top:18px}
+.fm-wrap.col{flex-direction:column;align-items:stretch;gap:18px}
+.fm-pair{display:flex;gap:22px;flex:none}
+.fm-d{position:relative;flex:none;width:270px;aspect-ratio:calc(var(--w)/var(--h));border-radius:16px;background:#fff;background-image:radial-gradient(rgba(20,20,40,.1) 1px,transparent 1px);background-size:14px 14px;box-shadow:0 0 0 2px #111114,0 18px 36px rgba(20,20,60,.14)}
+.fm-d.s{width:170px}
+.fm-d.w{width:100%;max-width:620px;align-self:center}
+.fm-d>i{position:absolute;display:block}
+.fm-safe{border:2px dashed var(--pink);border-radius:8px}
+.fm-t{height:5.4%;border-radius:4px;background:#111114}
+.fm-d.s .fm-t{height:3.4%}.fm-d.w .fm-t{height:6.5%}
+.fm-l{height:2.2%;border-radius:3px;background:#c9c9d6}
+.fm-d.w .fm-l{height:3.2%}
+.fm-img{border-radius:10px;background:linear-gradient(160deg,#d6efff,#7cc4ff)}
+.fm-ui,.fm-cut{background:repeating-linear-gradient(45deg,rgba(30,155,255,.3) 0 5px,rgba(30,155,255,.08) 5px 10px)}
+.fm-cut{top:0;bottom:0;width:3.2%}.fm-cut.l{left:0;border-radius:14px 0 0 14px}.fm-cut.r{right:0;border-radius:0 14px 14px 0}
+.fm-d.s .fm-ui:first-child{border-radius:14px 14px 0 0}
+.fm-crop{border-top:2px solid #111114;border-bottom:2px solid #111114;border-style:dashed none}
+.fm-num{position:absolute;font:400 9px var(--pixel);font-style:normal;color:#9a9aab}
+.fm-pin{position:absolute;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#ff7cc2,#ff2e97);color:#fff;font:800 12px Manrope,sans-serif;box-shadow:0 0 0 2px #fff,0 4px 8px rgba(255,46,151,.35);z-index:2}
+.fm-leg{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px;flex:1}
+.fm-wrap.col .fm-leg{display:grid;grid-template-columns:1fr 1fr;gap:9px 24px}
+.fm-leg li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.4}
+.fm-leg li i{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#fff0f8;color:var(--pink);font:800 12px Manrope,sans-serif;font-style:normal}
+@media (max-width:720px){
+  .fm-over{--u:.07px;gap:16px 14px;justify-content:space-between}
+  .fm-o span{font-size:10px}
+  figcaption{font-size:10.5px}figcaption b{font-size:12.5px}
+  .fm-wrap{flex-direction:column;align-items:stretch;gap:18px}
+  .fm-d{width:230px;align-self:center}.fm-d.s{width:132px}
+  .fm-pair{justify-content:center;gap:26px}
+  .fm-wrap.col .fm-leg{grid-template-columns:1fr}
+  .fm-leg li{font-size:14px}
+  .fm-pin{width:20px;height:20px;font-size:11px}
+}
 </style>
 </head>
 <body>
@@ -1335,6 +1377,47 @@ a.need-i:hover{translate:0 -4px;box-shadow:0 18px 36px rgba(255,46,151,.16)}
 <div class="grid2"><div class="card glass rv"><h3><span class="dot"></span>Слайды по порядку</h3><div class="tbl-wrap"><table class="tbl"><tr><th>Слайд</th><th>Задача</th></tr><tr><td><b>1 · Обложка</b></td><td>крючок: заголовок до 10 слов</td></tr><tr><td><b>2–3 · Проблема</b></td><td>почему это важно читателю</td></tr><tr><td><b>4–6 · Польза</b></td><td>одна мысль на слайд</td></tr><tr><td><b>Последний · Призыв</b></td><td>одно действие, не три</td></tr></table></div><p>Каждый слайд <b>подводит к следующему</b> — иначе не долистают.</p></div><div class="card rv rv"><h3><span class="dot b"></span>Сначала реши, зачем она</h3><div class="tbl-wrap"><table class="tbl"><tr><th>Задача</th><th>О чём</th><th>Смотрим на</th></tr><tr><td><b>Охваты</b></td><td>широкая тема, понятная любому</td><td>просмотры</td></tr><tr><td><b>Доверие</b></td><td>твой опыт, кейсы, процесс изнутри</td><td>подписки</td></tr><tr><td><b>Продажи</b></td><td>результат с цифрами и один призыв</td><td>переходы и заявки</td></tr></table></div><p>Одна карусель — <b>одна задача</b>.</p></div></div>
   </div>
   <div class="block"><span class="step-tag">Шаг 2 · Параметры — пиши их в каждом промпте</span>
+<div class="card glass rv"><h3><span class="dot"></span>Четыре формата в одном масштабе</h3>
+<div class="fm-over">
+  <figure><div class="fm-o" style="--w:1080;--h:1350"><span>4:5</span></div><figcaption><b>Пост и карусель</b>1080 × 1350</figcaption></figure>
+  <figure><div class="fm-o b" style="--w:1080;--h:1920"><span>9:16</span></div><figcaption><b>Сторис и рилс</b>1080 × 1920</figcaption></figure>
+  <figure><div class="fm-o" style="--w:1080;--h:1080"><span>1:1</span></div><figcaption><b>Квадрат</b>1080 × 1080</figcaption></figure>
+  <figure><div class="fm-o b" style="--w:1920;--h:1080"><span>16:9</span></div><figcaption><b>Презентация</b>1920 × 1080</figcaption></figure>
+</div>
+<p>Размер пиши <b>в каждом промпте</b>. Сделать из 4:5 сторис потом нельзя — только пересобрать.</p></div>
+<div class="card rv"><h3><span class="dot b"></span>Слайд карусели: где что стоит</h3>
+<div class="fm-wrap">
+  <div class="fm-d" style="--w:1080;--h:1350">
+    <i class="fm-cut l"></i><i class="fm-cut r"></i>
+    <i class="fm-safe" style="inset:5.9% 7.4%"></i>
+    <i class="fm-t" style="left:11%;top:14%;width:62%"></i><i class="fm-t" style="left:11%;top:22.5%;width:44%"></i>
+    <i class="fm-l" style="left:11%;top:38%;width:70%"></i><i class="fm-l" style="left:11%;top:43.5%;width:64%"></i><i class="fm-l" style="left:11%;top:49%;width:52%"></i>
+    <i class="fm-img" style="left:11%;top:58%;width:78%;height:22%"></i>
+    <em class="fm-num" style="left:11%;bottom:8.5%">03</em><em class="fm-num" style="right:11%;bottom:8.5%">→</em>
+    <b class="fm-pin" style="left:1%;top:3%">1</b><b class="fm-pin" style="left:76%;top:15%">2</b><b class="fm-pin" style="left:84%;top:42%">3</b><b class="fm-pin" style="left:44%;top:66%">4</b><b class="fm-pin" style="left:44%;bottom:6%">5</b><b class="fm-pin" style="right:-11px;top:46%">6</b>
+  </div>
+  <ol class="fm-leg"><li><i>1</i><span><b>Поля 80 px</b> со всех сторон — за пунктир ничего важного</span></li><li><i>2</i><span><b>Заголовок</b> — от 72 px, до 10 слов, в 2–3 строки</span></li><li><i>3</i><span><b>Текст</b> — от 36 px, до 25 слов</span></li><li><i>4</i><span><b>Картинка или схема</b> — одна на слайд</span></li><li><i>5</i><span><b>Номер и стрелка</b> — на каждом слайде, кроме последнего</span></li><li><i>6</i><span><b>Края в сетке профиля</b> — превью там уже, по бокам срезается примерно по 35 px</span></li></ol>
+</div></div>
+<div class="card rv"><h3><span class="dot"></span>Сторис и рилс: безопасные зоны</h3>
+<div class="fm-wrap">
+  <div class="fm-pair">
+    <figure><div class="fm-d s" style="--w:1080;--h:1920">
+      <i class="fm-ui" style="left:0;right:0;top:0;height:13%"></i><i class="fm-ui" style="left:0;right:0;bottom:0;height:13%"></i>
+      <i class="fm-safe" style="inset:13% 6%"></i>
+      <i class="fm-t" style="left:14%;top:30%;width:60%"></i><i class="fm-t" style="left:14%;top:36%;width:42%"></i>
+      <i class="fm-l" style="left:14%;top:47%;width:66%"></i><i class="fm-l" style="left:14%;top:51%;width:50%"></i>
+      <b class="fm-pin" style="left:38%;top:3.5%">1</b><b class="fm-pin" style="left:38%;bottom:3.5%">2</b><b class="fm-pin" style="left:76%;top:40%">3</b>
+    </div><figcaption><b>Сторис</b></figcaption></figure>
+    <figure><div class="fm-d s" style="--w:1080;--h:1920">
+      <i class="fm-ui" style="left:0;right:0;top:0;height:11%"></i><i class="fm-ui" style="left:0;right:0;bottom:0;height:21%"></i><i class="fm-ui" style="right:0;top:42%;bottom:21%;width:13%"></i>
+      <i class="fm-crop" style="left:0;right:0;top:12.5%;bottom:12.5%"></i>
+      <i class="fm-t" style="left:12%;top:34%;width:56%"></i><i class="fm-t" style="left:12%;top:40%;width:40%"></i>
+      <b class="fm-pin" style="left:38%;bottom:8%">4</b><b class="fm-pin" style="right:-11px;top:56%">5</b><b class="fm-pin" style="left:4%;top:14%">6</b>
+    </div><figcaption><b>Рилс</b></figcaption></figure>
+  </div>
+  <ol class="fm-leg"><li><i>1</i><span><b>Сверху 250 px</b> — аватар, ник и полоска прогресса</span></li><li><i>2</i><span><b>Снизу 250 px</b> — поле ответа</span></li><li><i>3</i><span><b>Середина</b> — сюда текст и всё важное</span></li><li><i>4</i><span><b>Рилс, низ ≈ 400 px</b> — подпись, звук и кнопки</span></li><li><i>5</i><span><b>Рилс, правый край</b> — лайк, комментарий, отправить</span></li><li><i>6</i><span><b>Рамка 3:4</b> — столько видно в сетке профиля, заголовок обложки держи внутри</span></li></ol>
+</div>
+<div class="note b"><svg><use href="#info"/></svg><span>Интерфейс Instagram меняется. Цифры — ориентир: перед публикацией посмотри превью на телефоне.</span></div></div>
 <div class="card glass b rv"><div class="tbl-wrap"><table class="tbl"><tr><th>Параметр</th><th>Значение</th></tr><tr><td><b>Размер</b></td><td>1080×1350 px, формат 4:5</td></tr><tr><td><b>Слайдов</b></td><td>7–10 (Instagram пускает до 20)</td></tr><tr><td><b>Поля</b></td><td>от 80 px с каждой стороны</td></tr><tr><td><b>Заголовок</b></td><td>от 72 px, до 10 слов</td></tr><tr><td><b>Текст</b></td><td>от 36 px, до 25 слов на слайд</td></tr><tr><td><b>Шрифты</b></td><td>не больше двух</td></tr><tr><td><b>Акцент</b></td><td>один цвет и одно выделение на слайд</td></tr><tr><td><b>Навигация</b></td><td>номер слайда и стрелка «листай»</td></tr></table></div><div class="note b"><svg><use href="#info"/></svg><span>Это рабочие ориентиры, а не закон. Главное — текст читается <b>с телефона на ходу</b>.</span></div></div>
   </div>
   <div class="block"><span class="step-tag">Шаг 3 · Напиши текст</span>
@@ -1400,6 +1483,18 @@ a.need-i:hover{translate:0 -4px;box-shadow:0 18px 36px rgba(255,46,151,.16)}
   <p class="sub">Твой текст → готовые слайды. <b>И Claude Design.</b></p>
 
   <div class="block"><span class="step-tag">Шаг 1 · Параметры презентации</span>
+<div class="card rv"><h3><span class="dot"></span>Слайд презентации: где что стоит</h3>
+<div class="fm-wrap col">
+  <div class="fm-d w" style="--w:1920;--h:1080">
+    <i class="fm-safe" style="inset:8.9% 5%"></i>
+    <i class="fm-t" style="left:8%;top:17%;width:46%"></i><i class="fm-t" style="left:8%;top:27%;width:30%"></i>
+    <i class="fm-l" style="left:8%;top:46%;width:36%"></i><i class="fm-l" style="left:8%;top:53%;width:32%"></i><i class="fm-l" style="left:8%;top:60%;width:24%"></i>
+    <i class="fm-img" style="right:8%;top:17%;width:32%;height:58%"></i>
+    <em class="fm-num" style="left:8%;bottom:11%">название</em><em class="fm-num" style="right:8%;bottom:11%">04 / 12</em>
+    <b class="fm-pin" style="left:1.5%;top:3%">1</b><b class="fm-pin" style="left:56%;top:19%">2</b><b class="fm-pin" style="left:46%;top:50%">3</b><b class="fm-pin" style="right:21%;top:42%">4</b><b class="fm-pin" style="left:46%;bottom:7%">5</b>
+  </div>
+  <ol class="fm-leg"><li><i>1</i><span><b>Поля 96 px</b> — одинаковые на всех слайдах</span></li><li><i>2</i><span><b>Заголовок-вывод</b> — от 56 px, в одну-две строки</span></li><li><i>3</i><span><b>Текст</b> — от 28 px, до 30 слов, одна мысль</span></li><li><i>4</i><span><b>Одна картинка, график или цифра</b> на слайд</span></li><li><i>5</i><span><b>Подвал</b> — название и номер слайда, мелко</span></li></ol>
+</div></div>
 <div class="card glass b rv"><div class="tbl-wrap"><table class="tbl"><tr><th>Параметр</th><th>Значение</th></tr><tr><td><b>Размер</b></td><td>1920×1080 px, формат 16:9</td></tr><tr><td><b>Слайдов</b></td><td>примерно 1 слайд на минуту рассказа</td></tr><tr><td><b>Заголовок</b></td><td>это вывод, а не тема: «Продажи выросли вдвое», а не «Продажи»</td></tr><tr><td><b>Текст</b></td><td>одна мысль на слайд, до 30 слов</td></tr><tr><td><b>Шрифты и цвета</b></td><td>из бренд-бука: два шрифта, один акцент</td></tr><tr><td><b>Структура</b></td><td>титул → проблема → решение → доказательства → предложение → контакты</td></tr></table></div></div>
   </div>
   <div class="block"><span class="step-tag">Шаг 2 · Пришли свой текст</span>
