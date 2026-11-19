@@ -1056,6 +1056,22 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
   .fm-pin{width:20px;height:20px;font-size:11px}
 }
 .soon{margin-top:26px;position:relative}.soon-tag{display:inline-block;margin-bottom:10px;padding:6px 12px;border-radius:999px;background:#111114;color:#fff;font:800 10.5px Manrope,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+/* before/after */
+.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ba{padding:18px 16px 16px;border-radius:24px;background:var(--glass);border:1px solid rgba(255,255,255,.95);box-shadow:var(--shadow)}
+.ba-p{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px}
+.ba-ar{font:800 18px Manrope,sans-serif;color:#b9b9c6}
+.ba-b{position:relative;width:92px;aspect-ratio:4/5;border-radius:11px;background:#fff;overflow:hidden}
+.ba-b.x{box-shadow:0 0 0 2px #d9d9e3}.ba-b.v{box-shadow:0 0 0 2px var(--pink),0 10px 20px rgba(255,46,151,.2)}
+.ba-b>i{position:absolute;display:block;border-radius:2px}
+.ba-b::after{position:absolute;right:5px;bottom:5px;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font:800 11px Manrope,sans-serif;color:#fff}
+.ba-b.x::after{content:"×";background:#b9b9c6}.ba-b.v::after{content:"✓";background:var(--pink)}
+.ba-f{display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:2px 8px;padding:6px}
+.ba-f b{font-size:22px;line-height:1.2;color:#111114}.ba-f b.px{font:400 15px var(--pixel);color:var(--pink);width:100%;text-align:center}
+.ba h4{font:800 15.5px Manrope,sans-serif}.ba p{margin-top:4px;font-size:13.5px;line-height:1.4;color:#6b6b7b}
+.ba-grid+.pills{margin-top:14px}
+@media (max-width:860px){.ba-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:720px){.ba-grid{gap:10px}.ba{padding:14px 10px 12px;border-radius:20px}.ba-b{width:62px;border-radius:8px}.ba-p{gap:6px}.ba-f b{font-size:15px}.ba-f b.px{font-size:11px}.ba h4{font-size:14px}.ba p{font-size:12.5px}}
 </style>
 </head>
 <body>
@@ -1267,7 +1283,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
   </div>
   <div class="block"><span class="step-tag">Шаг 3 · Попроси разобрать стиль</span>
 <div class="card glass rv"><ol class="steps"><li>Скачай отобранные пины или сделай <b>скриншоты</b>.</li><li>Открой <b>Claude</b> или <b>ChatGPT</b> и прикрепи все картинки <b>одним сообщением</b>.</li><li>Отправь промпт:</li></ol><div class="prompt"><div class="prompt-top"><span>Анализ стиля</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Ты арт-директор. Я прислала референсы — разбери их общий стиль.
+<pre>Ты арт-директор. Во вложении референсы — разбери их общий стиль.
 Опиши по пунктам:
 1. Палитра: основные цвета и акцент, с HEX-кодами.
 2. Шрифты: тип заголовка и текста, насыщенность, регистр.
@@ -1290,7 +1306,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
   <div class="tracker rv at-end" data-tracker="1">
     <div class="tr-head"><h3>📍 Трекер урока</h3><span class="tr-count"><b>0</b>/4</span></div>
     <div class="tr-bar"><i></i></div>
-    <div class="checks"><button class="check" data-check="1-board" type="button"><span>Собрала доску в Pinterest</span><span class="sw"></span></button><button class="check" data-check="1-pick" type="button"><span>Отобрала 5–8 референсов</span><span class="sw"></span></button><button class="check" data-check="1-an" type="button"><span>Получила анализ стиля</span><span class="sw"></span></button><button class="check" data-check="1-test" type="button"><span>Сделала тестовый слайд</span><span class="sw"></span></button></div>
+    <div class="checks"><button class="check" data-check="1-board" type="button"><span>Доска в Pinterest собрана</span><span class="sw"></span></button><button class="check" data-check="1-pick" type="button"><span>5–8 референсов отобраны</span><span class="sw"></span></button><button class="check" data-check="1-an" type="button"><span>Анализ стиля готов</span><span class="sw"></span></button><button class="check" data-check="1-test" type="button"><span>Тестовый слайд сделан</span><span class="sw"></span></button></div>
   </div>
   <div class="next"><span>Готово? Дальше —</span><button class="btn pink" data-go="2" type="button">Урок 2 · Свой стиль <svg><use href="#arrow"/></svg></button></div>
 </section>
@@ -1319,17 +1335,17 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 когда я прошу карусель, сторис, пост, обложку, презентацию
 или любой другой дизайн.
 Внутри: все правила бренд-бука и список запретов.
-Покажи текст скилла до сохранения и отдай готовый файл.</pre></div><ol class="steps"><li>Скачай файл скилла.</li><li><b>Customize → Skills → «+»</b> → загрузи файл → включи.</li><li>В новом чате проверь: <b>«Какие скиллы тебе доступны?»</b></li></ol></div><div class="pane" data-pane="pg"><ol class="steps b-steps"><li>Создай <b>проект</b> и загрузи туда <b>brand-book.md</b>.</li><li>В инструкции проекта напиши: <b>«Любой дизайн и любую картинку делай по brand-book.md»</b>.</li><li>Картинки и дизайн проси <b>внутри проекта</b>.</li></ol><div class="note b"><svg><use href="#info"/></svg><span>В промпт для картинки всё равно вставляй блок <b>«Описание стиля для промпта»</b> — генератор картинок так попадает точнее.</span></div></div></div>
+Покажи текст скилла до сохранения и отдай готовый файл.</pre></div><div class="note b"><svg><use href="#info"/></svg><span>Как поставить готовый файл — в <a href="#l7" data-go="7"><b>папке «Скиллы», шаг 1</b></a>.</span></div></div><div class="pane" data-pane="pg"><ol class="steps b-steps"><li>Создай <b>проект</b> и загрузи туда <b>brand-book.md</b>.</li><li>В инструкции проекта напиши: <b>«Любой дизайн и любую картинку делай по brand-book.md»</b>.</li><li>Картинки и дизайн проси <b>внутри проекта</b>.</li></ol><div class="note b"><svg><use href="#info"/></svg><span>В промпт для картинки всё равно вставляй блок <b>«Описание стиля для промпта»</b> — генератор картинок так попадает точнее.</span></div></div></div>
   </div>
   <div class="block"><span class="step-tag">Шаг 4 · Проверь</span>
 <div class="card rv rv"><p>Открой <b>новый чат</b> и не называй ни цветов, ни шрифтов:</p><div class="prompt"><div class="prompt-top"><span>Проверка стиля</span><button class="copy" type="button">Скопировать</button></div>
 <pre>Сделай обложку поста 1080×1350 с заголовком «[твой заголовок]».
-Потом перечисли, какие правила моего стиля ты применила.</pre></div><div class="note"><svg><use href="#info"/></svg><span>Стиль не подхватился? Проверь, что скилл <b>включён</b> или что ты <b>внутри проекта</b>. Правь бренд-бук, а не каждый ответ.</span></div></div>
+Потом перечисли, какие правила моего стиля применены.</pre></div><div class="note"><svg><use href="#info"/></svg><span>Стиль не подхватился? Проверь, что скилл <b>включён</b> или что ты <b>внутри проекта</b>.</span></div></div>
   </div>
   <div class="tracker rv at-end" data-tracker="2">
     <div class="tr-head"><h3>📍 Трекер урока</h3><span class="tr-count"><b>0</b>/4</span></div>
     <div class="tr-bar"><i></i></div>
-    <div class="checks"><button class="check" data-check="2-book" type="button"><span>Собрала бренд-бук</span><span class="sw"></span></button><button class="check" data-check="2-save" type="button"><span>Сохранила в проект или скилл</span><span class="sw"></span></button><button class="check" data-check="2-gpt" type="button"><span>Добавила в ChatGPT</span><span class="sw"></span></button><button class="check" data-check="2-check" type="button"><span>Проверила в новом чате</span><span class="sw"></span></button></div>
+    <div class="checks"><button class="check" data-check="2-book" type="button"><span>Бренд-бук собран</span><span class="sw"></span></button><button class="check" data-check="2-save" type="button"><span>Стиль сохранён в проект или скилл</span><span class="sw"></span></button><button class="check" data-check="2-gpt" type="button"><span>Стиль добавлен в ChatGPT</span><span class="sw"></span></button><button class="check" data-check="2-check" type="button"><span>Проверка в новом чате пройдена</span><span class="sw"></span></button></div>
   </div>
   <div class="next"><button class="btn" data-go="1" type="button">← Урок 1</button><button class="btn pink" data-go="3" type="button">Урок 3 · Коннекторы <svg><use href="#arrow"/></svg></button></div>
 </section>
@@ -1343,13 +1359,13 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 <div class="card glass b rv"><div class="tbl-wrap"><table class="tbl"><tr><th>Сервис</th><th>Что делает</th><th>Зачем тебе</th></tr><tr><td><b>Canva</b></td><td>создаёт и находит дизайны в твоём аккаунте</td><td>получаешь макет, который можно <b>править руками</b></td></tr><tr><td><b>Higgsfield</b></td><td>генерирует картинки и видео из чата</td><td>Claude сам картинки <b>не рисует</b> — рисует Higgsfield</td></tr></table></div><p><b>Коннектор</b> — ключ от сервиса. <b>MCP</b> — «розетка», через которую он подключается. Настраивать её руками не нужно.</p><div class="links"><a class="btn blue" href="https://katrinivanova0616-sys.github.io/workbook-01/#lesson-3" target="_blank" rel="noopener">Что такое MCP — воркбук 01 <svg><use href="#arrow"/></svg></a></div></div>
   </div>
   <div class="block"><span class="step-tag">Шаг 1 · Подключи Canva</span>
-<div class="grid2"><div class="card glass rv"><div class="conn-head"><span class="conn-ico">🎨</span><div><h3>Canva в Claude</h3><p>Карусели, презентации и обложки сразу в твоём аккаунте Canva.</p></div></div><ol class="steps"><li><b>Customize → Connectors</b>.</li><li>Найди <b>Canva</b> → <b>Connect</b>.</li><li>Войди в Canva <b>сама</b> и разреши доступ.</li><li>В новом чате проверь, что Canva <b>включена</b> в списке коннекторов.</li></ol><div class="links"><a class="btn pink" href="https://claude.ai/customize" target="_blank" rel="noopener">Открыть коннекторы <svg><use href="#arrow"/></svg></a><a class="btn " href="https://www.canva.com/help/connect-claude-to-canva/" target="_blank" rel="noopener">Инструкция Canva <svg><use href="#arrow"/></svg></a></div></div><div class="card glass b rv rv"><div class="conn-head"><span class="conn-ico">💬</span><div><h3>Canva в ChatGPT</h3><p>То же самое, только из ChatGPT.</p></div></div><ol class="steps b-steps"><li><b>Настройки → Приложения</b>.</li><li>Найди <b>Canva</b> → <b>Подключить</b>.</li><li>Войди в Canva <b>сама</b>.</li><li>В чате напиши <b>@Canva</b> или попроси «сделай в Canva…».</li></ol><div class="note b"><svg><use href="#info"/></svg><span>Названия пунктов меню меняются. Не нашла — спроси сам ChatGPT: <b>«Как подключить Canva?»</b></span></div></div></div><div class="card rv rv"><div class="prompt"><div class="prompt-top"><span>Проверь Canva</span><button class="copy" type="button">Скопировать</button></div>
+<div class="grid2"><div class="card glass rv"><div class="conn-head"><span class="conn-ico">🎨</span><div><h3>Canva в Claude</h3><p>Карусели, презентации и обложки сразу в твоём аккаунте Canva.</p></div></div><ol class="steps"><li><b>Customize → Connectors</b>.</li><li>Найди <b>Canva</b> → <b>Connect</b>.</li><li>Войди в Canva <b>вручную</b> и разреши доступ.</li><li>В новом чате проверь, что Canva <b>включена</b> в списке коннекторов.</li></ol><div class="links"><a class="btn pink" href="https://claude.ai/customize" target="_blank" rel="noopener">Открыть коннекторы <svg><use href="#arrow"/></svg></a><a class="btn " href="https://www.canva.com/help/connect-claude-to-canva/" target="_blank" rel="noopener">Инструкция Canva <svg><use href="#arrow"/></svg></a></div></div><div class="card glass b rv rv"><div class="conn-head"><span class="conn-ico">💬</span><div><h3>Canva в ChatGPT</h3><p>То же самое, только из ChatGPT.</p></div></div><ol class="steps b-steps"><li><b>Настройки → Приложения</b>.</li><li>Найди <b>Canva</b> → <b>Подключить</b>.</li><li>Войди в Canva <b>вручную</b>.</li><li>В чате напиши <b>@Canva</b> или попроси «сделай в Canva…».</li></ol><div class="note b"><svg><use href="#info"/></svg><span>Названия пунктов меню меняются. Не видно — спроси сам ChatGPT: <b>«Как подключить Canva?»</b></span></div></div></div><div class="card rv rv"><div class="prompt"><div class="prompt-top"><span>Проверь Canva</span><button class="copy" type="button">Скопировать</button></div>
 <pre>Сделай в Canva карусель на 7 слайдов 1080×1350 на тему [тема].
 Стиль — по моему бренд-буку: [вставь описание стиля].
-Пришли ссылку на дизайн, чтобы я поправила его в Canva.</pre></div><div class="note"><svg><use href="#info"/></svg><span>Коннекторы работают на <b>платных тарифах</b> Claude. Логин и пароль вводишь только ты на странице Canva — Claude их не видит.</span></div></div>
+Пришли ссылку на дизайн, чтобы его можно было поправить в Canva.</pre></div><div class="note"><svg><use href="#info"/></svg><span>Коннекторы работают на <b>платных тарифах</b> Claude. Логин и пароль вводишь только ты на странице Canva — Claude их не видит.</span></div></div>
   </div>
   <div class="block"><span class="step-tag">Шаг 2 · Подключи Higgsfield</span>
-<div class="card glass rv"><div class="conn-head"><span class="conn-ico">🎬</span><div><h3>Higgsfield</h3><p>Картинки для слайдов и креативов прямо из чата. Тратит <b>кредиты Higgsfield</b>.</p></div></div><ol class="steps"><li><b>Customize → Connectors → Add custom connector</b>.</li><li>Адрес сервера: <code>https://mcp.higgsfield.ai/mcp</code></li><li>Войди через Higgsfield <b>сама</b> — ключ не нужен.</li><li>Проверь: <b>«Какие модели картинок доступны в Higgsfield?»</b></li></ol><div class="links"><a class="btn pink" href="https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-connect-higgsfield-to-ai-agent" target="_blank" rel="noopener">Инструкция Higgsfield <svg><use href="#arrow"/></svg></a></div></div>
+<div class="card glass rv"><div class="conn-head"><span class="conn-ico">🎬</span><div><h3>Higgsfield</h3><p>Картинки для слайдов и креативов прямо из чата. Тратит <b>кредиты Higgsfield</b>.</p></div></div><ol class="steps"><li><b>Customize → Connectors → Add custom connector</b>.</li><li>Адрес сервера: <code>https://mcp.higgsfield.ai/mcp</code></li><li>Войди через Higgsfield <b>вручную</b> — ключ не нужен.</li><li>Проверь: <b>«Какие модели картинок доступны в Higgsfield?»</b></li></ol><div class="links"><a class="btn pink" href="https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-connect-higgsfield-to-ai-agent" target="_blank" rel="noopener">Инструкция Higgsfield <svg><use href="#arrow"/></svg></a></div></div>
   </div>
   <div class="block"><span class="step-tag">Шаг 3 · Какую модель просить</span>
 <div class="card glass b rv"><h3><span class="dot b"></span>Модели картинок в Higgsfield</h3><div class="tbl-wrap"><table class="tbl"><tr><th>Модель</th><th>Для чего</th></tr><tr><td><b>Nano Banana Pro</b></td><td>текст на картинке, схемы, слайды с надписями</td></tr><tr><td><b>GPT Image 2</b></td><td>типографика и точные правки готовой картинки</td></tr><tr><td><b>Soul 2.0</b></td><td>реалистичные люди: UGC, fashion, портреты</td></tr><tr><td><b>Seedream 5</b></td><td>правки по инструкции: «убери», «замени», «перекрась»</td></tr><tr><td><b>Recraft V4.1</b></td><td>логотипы, иконки, мокапы товара</td></tr><tr><td><b>Marketing Studio</b></td><td>рекламные картинки с товаром</td></tr><tr><td><b>Auto</b></td><td>не знаешь, что выбрать — сервис выберет сам</td></tr></table></div><div class="prompt"><div class="prompt-top"><span>Картинка для слайда</span><button class="copy" type="button">Скопировать</button></div>
@@ -1364,7 +1380,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
   <div class="tracker rv at-end" data-tracker="3">
     <div class="tr-head"><h3>📍 Трекер урока</h3><span class="tr-count"><b>0</b>/4</span></div>
     <div class="tr-bar"><i></i></div>
-    <div class="checks"><button class="check" data-check="3-canva" type="button"><span>Подключила Canva</span><span class="sw"></span></button><button class="check" data-check="3-ctest" type="button"><span>Сделала тестовый дизайн в Canva</span><span class="sw"></span></button><button class="check" data-check="3-higgs" type="button"><span>Подключила Higgsfield</span><span class="sw"></span></button><button class="check" data-check="3-img" type="button"><span>Сгенерировала первую картинку</span><span class="sw"></span></button></div>
+    <div class="checks"><button class="check" data-check="3-canva" type="button"><span>Canva подключена</span><span class="sw"></span></button><button class="check" data-check="3-ctest" type="button"><span>Тестовый дизайн в Canva готов</span><span class="sw"></span></button><button class="check" data-check="3-higgs" type="button"><span>Higgsfield подключён</span><span class="sw"></span></button><button class="check" data-check="3-img" type="button"><span>Первая картинка сгенерирована</span><span class="sw"></span></button></div>
   </div>
   <div class="next"><button class="btn" data-go="2" type="button">← Урок 2</button><button class="btn pink" data-go="4" type="button">Урок 4 · Карусели <svg><use href="#arrow"/></svg></button></div>
 </section>
@@ -1377,7 +1393,10 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
   <div class="block"><span class="step-tag">Шаг 1 · Из чего состоит карусель</span>
 <div class="grid2"><div class="card glass rv"><h3><span class="dot"></span>Слайды по порядку</h3><div class="tbl-wrap"><table class="tbl"><tr><th>Слайд</th><th>Задача</th></tr><tr><td><b>1 · Обложка</b></td><td>крючок: заголовок до 10 слов</td></tr><tr><td><b>2–3 · Проблема</b></td><td>почему это важно читателю</td></tr><tr><td><b>4–6 · Польза</b></td><td>одна мысль на слайд</td></tr><tr><td><b>Последний · Призыв</b></td><td>одно действие, не три</td></tr></table></div><p>Каждый слайд <b>подводит к следующему</b> — иначе не долистают.</p></div><div class="card rv rv"><h3><span class="dot b"></span>Сначала реши, зачем она</h3><div class="tbl-wrap"><table class="tbl"><tr><th>Задача</th><th>О чём</th><th>Смотрим на</th></tr><tr><td><b>Охваты</b></td><td>широкая тема, понятная любому</td><td>просмотры</td></tr><tr><td><b>Доверие</b></td><td>твой опыт, кейсы, процесс изнутри</td><td>подписки</td></tr><tr><td><b>Продажи</b></td><td>результат с цифрами и один призыв</td><td>переходы и заявки</td></tr></table></div><p>Одна карусель — <b>одна задача</b>.</p></div></div>
   </div>
-  <div class="block"><span class="step-tag">Шаг 2 · Параметры — пиши их в каждом промпте</span>
+  <div class="block"><span class="step-tag">Готовые структуры · выбери одну</span>
+<div class="card glass rv"><h3><span class="dot"></span>Шесть типов каруселей</h3><div class="tbl-wrap"><table class="tbl"><tr><th>Тип</th><th>Когда брать</th><th>Слайды по порядку</th></tr><tr><td><b>Чек-лист</b></td><td>быстрая польза, такое сохраняют</td><td>обложка → 5–7 пунктов по одному → итог и призыв</td></tr><tr><td><b>Инструкция</b></td><td>научить что-то делать</td><td>обложка с результатом → шаги по порядку → что получится → призыв</td></tr><tr><td><b>Мифы и правда</b></td><td>спорная тема</td><td>обложка-провокация → пары «миф / правда» → вывод</td></tr><tr><td><b>Кейс</b></td><td>доверие и продажи</td><td>результат цифрой → было → что сделали → стало → призыв</td></tr><tr><td><b>Сравнение</b></td><td>помочь выбрать</td><td>вопрос «что выбрать» → А против Б по трём критериям → кому что подойдёт</td></tr><tr><td><b>Подборка</b></td><td>охваты</td><td>обложка с числом → по одному пункту на слайд → «сохрани»</td></tr></table></div><p>Тип называй <b>в промпте</b> — нейросеть сразу соберёт текст по этой структуре.</p></div>
+  </div>
+  <div class="block"><span class="step-tag">Шаг 2 · Форматы и параметры</span>
 <div class="card glass rv"><h3><span class="dot"></span>Четыре формата в одном масштабе</h3>
 <div class="fm-over">
   <figure><div class="fm-o" style="--w:1080;--h:1350"><span>4:5</span></div><figcaption><b>Пост и карусель</b>1080 × 1350</figcaption></figure>
@@ -1419,9 +1438,10 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
   <ol class="fm-leg"><li><i>1</i><span><b>Сверху 250 px</b> — аватар, ник и полоска прогресса</span></li><li><i>2</i><span><b>Снизу 250 px</b> — поле ответа</span></li><li><i>3</i><span><b>Середина</b> — сюда текст и всё важное</span></li><li><i>4</i><span><b>Рилс, низ ≈ 400 px</b> — подпись, звук и кнопки</span></li><li><i>5</i><span><b>Рилс, правый край</b> — лайк, комментарий, отправить</span></li><li><i>6</i><span><b>Рамка 3:4</b> — столько видно в сетке профиля, заголовок обложки держи внутри</span></li></ol>
 </div>
 <div class="note b"><svg><use href="#info"/></svg><span>Интерфейс Instagram меняется. Цифры — ориентир: перед публикацией посмотри превью на телефоне.</span></div></div>
-<div class="card glass b rv"><div class="tbl-wrap"><table class="tbl"><tr><th>Параметр</th><th>Значение</th></tr><tr><td><b>Размер</b></td><td>1080×1350 px, формат 4:5</td></tr><tr><td><b>Слайдов</b></td><td>7–10 (Instagram пускает до 20)</td></tr><tr><td><b>Поля</b></td><td>от 80 px с каждой стороны</td></tr><tr><td><b>Заголовок</b></td><td>от 72 px, до 10 слов</td></tr><tr><td><b>Текст</b></td><td>от 36 px, до 25 слов на слайд</td></tr><tr><td><b>Шрифты</b></td><td>не больше двух</td></tr><tr><td><b>Акцент</b></td><td>один цвет и одно выделение на слайд</td></tr><tr><td><b>Навигация</b></td><td>номер слайда и стрелка «листай»</td></tr></table></div><div class="note b"><svg><use href="#info"/></svg><span>Это рабочие ориентиры, а не закон. Главное — текст читается <b>с телефона на ходу</b>.</span></div></div>
+<div class="card glass b rv"><div class="tbl-wrap"><table class="tbl"><tr><th>Параметр</th><th>Значение</th></tr><tr><td><b>Слайдов</b></td><td>7–10 (Instagram пускает до 20)</td></tr><tr><td><b>Шрифты</b></td><td>не больше двух</td></tr><tr><td><b>Акцент</b></td><td>один цвет и одно выделение на слайд</td></tr></table></div><div class="note b"><svg><use href="#info"/></svg><span>Это рабочие ориентиры, а не закон. Главное — текст читается <b>с телефона на ходу</b>.</span></div></div>
   </div>
   <div class="block"><span class="step-tag">Шаг 3 · Напиши текст</span>
+<div class="card rv"><h3><span class="dot b"></span>Шесть формул обложки</h3><div class="tbl-wrap"><table class="tbl"><tr><th>Формула</th><th>Пример</th></tr><tr><td><b>Цифра + выгода</b></td><td>«5 шрифтов, которые делают пост дороже»</td></tr><tr><td><b>Ошибка</b></td><td>«Почему твои карусели не долистывают»</td></tr><tr><td><b>Как я</b></td><td>«Как я собираю карусель за [время]»</td></tr><tr><td><b>Спор</b></td><td>«Canva не нужна. Вот что вместо неё»</td></tr><tr><td><b>До и после</b></td><td>«Один слайд: было и стало»</td></tr><tr><td><b>Вопрос</b></td><td>«Какой формат выбрать: 4:5 или 9:16?»</td></tr></table></div><div class="note b"><svg><use href="#info"/></svg><span>Примеры — про дизайн, подставь свою тему. Цифры ставь <b>только настоящие</b>.</span></div></div>
 <div class="card glass rv"><div class="prompt"><div class="prompt-top"><span>Редактор каруселей</span><button class="copy" type="button">Скопировать</button></div>
 <pre>Ты редактор каруселей для Instagram.
 Сначала спроси мою нишу, тему и задачу карусели:
@@ -1451,7 +1471,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 Стиль: [описание стиля из бренд-бука].
 Сюжет: [что на картинке].
 Композиция: объект снизу, сверху 60% пустого места под заголовок.
-Без текста на картинке.</pre></div><div class="note b"><svg><use href="#info"/></svg><span>Длинный текст в генераторе картинок может «поплыть» в буквах. Важные фразы верстай в Claude или Canva.</span></div></div></div>
+Без текста на картинке.</pre></div></div></div>
   </div>
   <div class="block"><span class="step-tag">Шаг 5 · Оживи карусель</span>
 <div class="card glass rv"><h3><span class="dot"></span>Слайды, которые двигаются</h3><p>В Instagram слайд карусели может быть <b>видео</b>. Оживляй 1–2 слайда — обложку и главный.</p><div class="tabs" role="tablist"><button class="tab on" data-tab="ac" type="button">Claude</button><button class="tab" data-tab="ah" type="button">Higgsfield</button></div><div class="pane on" data-pane="ac"><div class="prompt"><div class="prompt-top"><span>Анимированная карусель</span><button class="copy" type="button">Скопировать</button></div>
@@ -1468,12 +1488,22 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 Перед генерацией скажи, сколько кредитов потратится.</pre></div><div class="note b"><svg><use href="#info"/></svg><span>Оживляй картинку <b>без текста</b>, а текст клади поверх — иначе буквы поедут.</span></div></div></div>
   </div>
   <div class="block"><span class="step-tag">Шаг 6 · Доводка</span>
-<div class="card rv rv"><div class="tbl-wrap"><table class="tbl"><tr><th>Проверь</th><th>Как понять</th></tr><tr><td><b>Воздух</b></td><td>на слайде есть пустое место, текст не до краёв</td></tr><tr><td><b>Контраст</b></td><td>текст читается на маленьком экране</td></tr><tr><td><b>Один акцент</b></td><td>одна яркая точка на слайд, не радуга</td></tr><tr><td><b>Серия</b></td><td>все слайды выглядят как одна семья</td></tr><tr><td><b>Обложка</b></td><td>понятна за секунду без подписи</td></tr></table></div></div>
+<div class="ba-grid rv"><div class="ba"><div class="ba-p"><div class="ba-b x"><i style="left:4%;top:5%;width:92%;height:9%;background:#111114"></i><i style="left:4%;top:17%;width:88%;height:9%;background:#111114"></i><i style="left:4%;top:31%;width:92%;height:4%;background:#c9c9d6"></i><i style="left:4%;top:39%;width:92%;height:4%;background:#c9c9d6"></i><i style="left:4%;top:47%;width:92%;height:4%;background:#c9c9d6"></i><i style="left:4%;top:55%;width:92%;height:4%;background:#c9c9d6"></i><i style="left:4%;top:63%;width:92%;height:4%;background:#c9c9d6"></i><i style="left:4%;top:71%;width:92%;height:4%;background:#c9c9d6"></i><i style="left:4%;top:79%;width:92%;height:4%;background:#c9c9d6"></i><i style="left:4%;top:87%;width:92%;height:4%;background:#c9c9d6"></i></div><span class="ba-ar">→</span><div class="ba-b v"><i style="left:14%;top:16%;width:56%;height:8%;background:#111114"></i><i style="left:14%;top:27%;width:40%;height:8%;background:#111114"></i><i style="left:14%;top:46%;width:60%;height:3.5%;background:#c9c9d6"></i><i style="left:14%;top:53%;width:52%;height:3.5%;background:#c9c9d6"></i><i style="left:14%;top:60%;width:40%;height:3.5%;background:#c9c9d6"></i></div></div><h4>Воздух</h4><p>Оставь поля и пустое место. Меньше текста — дороже вид.</p></div><div class="ba"><div class="ba-p"><div class="ba-b x"><i style="left:12%;top:16%;width:70%;height:6%;background:#6b6b7b"></i><i style="left:12%;top:28%;width:70%;height:6%;background:#6b6b7b"></i><i style="left:12%;top:40%;width:70%;height:6%;background:#6b6b7b"></i><i style="left:12%;top:52%;width:70%;height:6%;background:#6b6b7b"></i><i style="left:12%;top:64%;width:70%;height:6%;background:#6b6b7b"></i><i style="left:12%;top:76%;width:70%;height:6%;background:#6b6b7b"></i></div><span class="ba-ar">→</span><div class="ba-b v"><i style="left:12%;top:14%;width:66%;height:11%;background:#111114"></i><i style="left:12%;top:29%;width:44%;height:6%;background:#6b6b7b"></i><i style="left:12%;top:46%;width:60%;height:3.5%;background:#c9c9d6"></i><i style="left:12%;top:53%;width:54%;height:3.5%;background:#c9c9d6"></i><i style="left:12%;top:60%;width:36%;height:3.5%;background:#c9c9d6"></i></div></div><h4>Иерархия</h4><p>Три размера: заголовок, подзаголовок, текст.</p></div><div class="ba"><div class="ba-p"><div class="ba-b x"><i style="left:12%;top:14%;width:66%;height:10%;background:#ff2e97"></i><i style="left:12%;top:28%;width:46%;height:6%;background:#1e9bff"></i><i style="left:12%;top:44%;width:60%;height:5%;background:#8a5cff"></i><i style="left:12%;top:54%;width:50%;height:5%;background:#ff9d2e"></i><i style="left:12%;top:70%;width:36%;height:10%;background:#22c58b"></i></div><span class="ba-ar">→</span><div class="ba-b v"><i style="left:12%;top:14%;width:66%;height:10%;background:#111114"></i><i style="left:12%;top:28%;width:46%;height:6%;background:#c9c9d6"></i><i style="left:12%;top:44%;width:60%;height:4%;background:#c9c9d6"></i><i style="left:12%;top:52%;width:50%;height:4%;background:#c9c9d6"></i><i style="left:12%;top:70%;width:36%;height:10%;background:#ff2e97"></i></div></div><h4>Один акцент</h4><p>Одна яркая точка на слайд, а не радуга.</p></div><div class="ba"><div class="ba-p"><div class="ba-b x"><i style="left:22%;top:14%;width:60%;height:10%;background:#111114"></i><i style="left:8%;top:29%;width:44%;height:6%;background:#c9c9d6"></i><i style="left:34%;top:44%;width:54%;height:4%;background:#c9c9d6"></i><i style="left:14%;top:52%;width:46%;height:4%;background:#c9c9d6"></i><i style="left:40%;top:68%;width:36%;height:10%;background:#ff2e97"></i></div><span class="ba-ar">→</span><div class="ba-b v"><i style="left:12%;top:14%;width:60%;height:10%;background:#111114"></i><i style="left:12%;top:29%;width:44%;height:6%;background:#c9c9d6"></i><i style="left:12%;top:44%;width:54%;height:4%;background:#c9c9d6"></i><i style="left:12%;top:52%;width:46%;height:4%;background:#c9c9d6"></i><i style="left:12%;top:68%;width:36%;height:10%;background:#ff2e97"></i></div></div><h4>Одна линия</h4><p>Всё стоит от одного левого края.</p></div><div class="ba"><div class="ba-p"><div class="ba-b x" style="background:#d9d9e3"><i style="left:12%;top:14%;width:66%;height:10%;background:#c2c2cf"></i><i style="left:12%;top:29%;width:44%;height:6%;background:#c8c8d4"></i><i style="left:12%;top:46%;width:60%;height:4%;background:#cdcdd8"></i><i style="left:12%;top:54%;width:50%;height:4%;background:#cdcdd8"></i></div><span class="ba-ar">→</span><div class="ba-b v"><i style="left:12%;top:14%;width:66%;height:10%;background:#111114"></i><i style="left:12%;top:29%;width:44%;height:6%;background:#6b6b7b"></i><i style="left:12%;top:46%;width:60%;height:4%;background:#c9c9d6"></i><i style="left:12%;top:54%;width:50%;height:4%;background:#c9c9d6"></i></div></div><h4>Контраст</h4><p>Тёмное на светлом или наоборот — чтобы читалось с телефона.</p></div><div class="ba"><div class="ba-p"><div class="ba-b x ba-f"><b style="font-family:Georgia,serif">Aa</b><b style="font-family:'Comic Sans MS',cursive">Aa</b><b style="font-family:Courier,monospace">Aa</b><b style="font-family:Impact,sans-serif">Aa</b></div><span class="ba-ar">→</span><div class="ba-b v ba-f"><b class="px">Aa</b><b>Aa</b></div></div><h4>Два шрифта</h4><p>Один для заголовков, один для текста.</p></div></div>
+<div class="pills"><span>все слайды — одна семья</span><span>обложка понятна за секунду</span></div>
+  </div>
+  <div class="block"><span class="step-tag">Шаг 7 · Подпись к посту</span>
+<div class="card glass rv"><div class="tbl-wrap"><table class="tbl"><tr><th>Часть</th><th>Что писать</th></tr><tr><td><b>Первая строка</b></td><td>продолжает обложку, до 12 слов. Без «Привет» и «Сегодня расскажу»</td></tr><tr><td><b>Польза</b></td><td>2–4 коротких абзаца: то, чего нет на слайдах</td></tr><tr><td><b>Призыв</b></td><td>одно действие: сохранить, подписаться или написать</td></tr><tr><td><b>Кодовое слово</b></td><td>«напиши СЛОВО в директ» — если ведёшь в воронку</td></tr></table></div><div class="prompt"><div class="prompt-top"><span>Подпись к карусели</span><button class="copy" type="button">Скопировать</button></div>
+<pre>Напиши подпись к этой карусели: [вставь текст слайдов].
+Первая строка продолжает обложку и цепляет — до 12 слов.
+Дальше 2–4 коротких абзаца: то, чего нет на слайдах.
+В конце один призыв: [сохранить / подписаться / написать слово в директ].
+Пиши моим голосом, без штампов и без хэштегов в тексте.
+Дай 2 варианта.</pre></div></div>
   </div>
   <div class="tracker rv at-end" data-tracker="4">
-    <div class="tr-head"><h3>📍 Трекер урока</h3><span class="tr-count"><b>0</b>/5</span></div>
+    <div class="tr-head"><h3>📍 Трекер урока</h3><span class="tr-count"><b>0</b>/6</span></div>
     <div class="tr-bar"><i></i></div>
-    <div class="checks"><button class="check" data-check="4-goal" type="button"><span>Выбрала задачу карусели</span><span class="sw"></span></button><button class="check" data-check="4-text" type="button"><span>Написала текст по слайдам</span><span class="sw"></span></button><button class="check" data-check="4-make" type="button"><span>Сверстала карусель</span><span class="sw"></span></button><button class="check" data-check="4-anim" type="button"><span>Оживила один слайд</span><span class="sw"></span></button><button class="check" data-check="4-fix" type="button"><span>Прошла доводку</span><span class="sw"></span></button></div>
+    <div class="checks"><button class="check" data-check="4-goal" type="button"><span>Задача и тип карусели выбраны</span><span class="sw"></span></button><button class="check" data-check="4-text" type="button"><span>Текст по слайдам написан</span><span class="sw"></span></button><button class="check" data-check="4-make" type="button"><span>Карусель свёрстана</span><span class="sw"></span></button><button class="check" data-check="4-anim" type="button"><span>Один слайд оживлён</span><span class="sw"></span></button><button class="check" data-check="4-fix" type="button"><span>Доводка пройдена</span><span class="sw"></span></button><button class="check" data-check="4-cap" type="button"><span>Подпись к посту готова</span><span class="sw"></span></button></div>
   </div>
   <div class="next"><button class="btn" data-go="3" type="button">← Урок 3</button><button class="btn pink" data-go="5" type="button">Урок 5 · Презентации <svg><use href="#arrow"/></svg></button></div>
 </section>
@@ -1496,7 +1526,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
   </div>
   <ol class="fm-leg"><li><i>1</i><span><b>Поля 96 px</b> — одинаковые на всех слайдах</span></li><li><i>2</i><span><b>Заголовок-вывод</b> — от 56 px, в одну-две строки</span></li><li><i>3</i><span><b>Текст</b> — от 28 px, до 30 слов, одна мысль</span></li><li><i>4</i><span><b>Одна картинка, график или цифра</b> на слайд</span></li><li><i>5</i><span><b>Подвал</b> — название и номер слайда, мелко</span></li></ol>
 </div></div>
-<div class="card glass b rv"><div class="tbl-wrap"><table class="tbl"><tr><th>Параметр</th><th>Значение</th></tr><tr><td><b>Размер</b></td><td>1920×1080 px, формат 16:9</td></tr><tr><td><b>Слайдов</b></td><td>примерно 1 слайд на минуту рассказа</td></tr><tr><td><b>Заголовок</b></td><td>это вывод, а не тема: «Продажи выросли вдвое», а не «Продажи»</td></tr><tr><td><b>Текст</b></td><td>одна мысль на слайд, до 30 слов</td></tr><tr><td><b>Шрифты и цвета</b></td><td>из бренд-бука: два шрифта, один акцент</td></tr><tr><td><b>Структура</b></td><td>титул → проблема → решение → доказательства → предложение → контакты</td></tr></table></div></div>
+<div class="card glass b rv"><div class="tbl-wrap"><table class="tbl"><tr><th>Параметр</th><th>Значение</th></tr><tr><td><b>Слайдов</b></td><td>примерно 1 слайд на минуту рассказа</td></tr><tr><td><b>Заголовок</b></td><td>это вывод, а не тема: «Продажи выросли вдвое», а не «Продажи»</td></tr><tr><td><b>Шрифты и цвета</b></td><td>из бренд-бука: два шрифта, один акцент</td></tr><tr><td><b>Структура</b></td><td>титул → проблема → решение → доказательства → предложение → контакты</td></tr></table></div></div>
   </div>
   <div class="block"><span class="step-tag">Шаг 2 · Пришли свой текст</span>
 <div class="card glass rv"><p>Нейросеть собирает слайды из <b>твоего</b> текста. Чем точнее промпт — тем меньше правок.</p><div class="prompt"><div class="prompt-top"><span>Текст → план слайдов</span><button class="copy" type="button">Скопировать</button></div>
@@ -1522,12 +1552,12 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 Макет: 16:9, [N] слайдов, крупные заголовки, много воздуха.
 Контент: [вставь план слайдов].
 Аудитория: [кто смотрит и с какого экрана].
-Стиль — по референсам и бренд-буку, которые я прикрепила.</pre></div></div></div><div class="card glass rv"><h3><span class="dot"></span>Три способа правки</h3><div class="tbl-wrap"><table class="tbl"><tr><th>Способ</th><th>Для чего</th><th>Пример</th></tr><tr><td><b>Чат</b></td><td>крупные изменения</td><td>«Сделай палитру светлее», «Покажи 2 других макета»</td></tr><tr><td><b>Комментарий</b></td><td>точечно по элементу на холсте</td><td>«Увеличь отступ», «Здесь акцентный цвет»</td></tr><tr><td><b>Руками</b></td><td>быстрая косметика</td><td>подвинуть, растянуть, выровнять</td></tr></table></div><ol class="steps"><li>Перед экспериментом: <b>«Сохрани то, что есть, и попробуй другой подход»</b>.</li><li>Готово — кнопка <b>Export</b> справа вверху: PDF, PPTX, HTML или отправка в Canva.</li></ol><div class="note b"><svg><use href="#info"/></svg><span>Комментарий не сработал? Вставь тот же текст <b>в чат</b>. Доступ к Claude Design зависит от тарифа — проверь в своём аккаунте.</span></div></div>
+Стиль — по референсам и бренд-буку, которые во вложении.</pre></div></div></div><div class="card glass rv"><h3><span class="dot"></span>Три способа правки</h3><div class="tbl-wrap"><table class="tbl"><tr><th>Способ</th><th>Для чего</th><th>Пример</th></tr><tr><td><b>Чат</b></td><td>крупные изменения</td><td>«Сделай палитру светлее», «Покажи 2 других макета»</td></tr><tr><td><b>Комментарий</b></td><td>точечно по элементу на холсте</td><td>«Увеличь отступ», «Здесь акцентный цвет»</td></tr><tr><td><b>Руками</b></td><td>быстрая косметика</td><td>подвинуть, растянуть, выровнять</td></tr></table></div><ol class="steps"><li>Перед экспериментом: <b>«Сохрани то, что есть, и попробуй другой подход»</b>.</li><li>Готово — кнопка <b>Export</b> справа вверху: PDF, PPTX, HTML или отправка в Canva.</li></ol><div class="note b"><svg><use href="#info"/></svg><span>Комментарий не сработал? Вставь тот же текст <b>в чат</b>. Доступ к Claude Design зависит от тарифа — проверь в своём аккаунте.</span></div></div>
   </div>
   <div class="tracker rv at-end" data-tracker="5">
     <div class="tr-head"><h3>📍 Трекер урока</h3><span class="tr-count"><b>0</b>/5</span></div>
     <div class="tr-bar"><i></i></div>
-    <div class="checks"><button class="check" data-check="5-plan" type="button"><span>Получила план слайдов</span><span class="sw"></span></button><button class="check" data-check="5-deck" type="button"><span>Собрала презентацию</span><span class="sw"></span></button><button class="check" data-check="5-cd" type="button"><span>Открыла Claude Design</span><span class="sw"></span></button><button class="check" data-check="5-edit" type="button"><span>Сделала правку чатом и комментарием</span><span class="sw"></span></button><button class="check" data-check="5-exp" type="button"><span>Экспортировала файл</span><span class="sw"></span></button></div>
+    <div class="checks"><button class="check" data-check="5-plan" type="button"><span>План слайдов готов</span><span class="sw"></span></button><button class="check" data-check="5-deck" type="button"><span>Презентация собрана</span><span class="sw"></span></button><button class="check" data-check="5-cd" type="button"><span>Claude Design открыт</span><span class="sw"></span></button><button class="check" data-check="5-edit" type="button"><span>Правка чатом и комментарием сделана</span><span class="sw"></span></button><button class="check" data-check="5-exp" type="button"><span>Файл экспортирован</span><span class="sw"></span></button></div>
   </div>
   <div class="card glass rv soon"><span class="soon-tag">В следующем воркбуке</span><h3><span class="dot"></span>Рилс из карусели</h3>
   <p>Один материал — два формата. Возьмём готовую карусель из <a href="#l4" data-go="4"><b>Урока 4</b></a> и соберём из неё рилс: сценарий, движение, обложка.</p>
@@ -1560,7 +1590,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
   <div class="tracker rv at-end" data-tracker="7">
     <div class="tr-head"><h3>📍 Трекер папки</h3><span class="tr-count"><b>0</b>/4</span></div>
     <div class="tr-bar"><i></i></div>
-    <div class="checks"><button class="check" data-check="7-first" type="button"><span>Поставила первый навык</span><span class="sw"></span></button><button class="check" data-check="7-three" type="button"><span>Выбрала 3 навыка из подборки</span><span class="sw"></span></button><button class="check" data-check="7-mine" type="button"><span>Скачала мои скиллы</span><span class="sw"></span></button><button class="check" data-check="7-own" type="button"><span>Сохранила свой стиль как скилл</span><span class="sw"></span></button></div>
+    <div class="checks"><button class="check" data-check="7-first" type="button"><span>Первый навык поставлен</span><span class="sw"></span></button><button class="check" data-check="7-three" type="button"><span>3 навыка из подборки выбраны</span><span class="sw"></span></button><button class="check" data-check="7-mine" type="button"><span>Мои скиллы скачаны</span><span class="sw"></span></button><button class="check" data-check="7-own" type="button"><span>Свой стиль сохранён как скилл</span><span class="sw"></span></button></div>
   </div>
   <div class="next"><button class="btn" data-go="5" type="button">← Урок 5</button><button class="btn pink" data-go="8" type="button">Папка «Промпты» <svg><use href="#arrow"/></svg></button></div>
 </section>
@@ -1571,7 +1601,10 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
   <p class="sub">Посты, сторис, мокапы, креативы. <b>Копируй и подставляй своё.</b></p>
 
   <div class="block"><span class="step-tag">Сначала · Как писать промпт для дизайна</span>
-<div class="card glass rv"><h3><span class="dot"></span>Техзадание, а не пожелание</h3><div class="pills"><span>Формат</span><span>Стиль</span><span>Сюжет</span><span>Цвет и свет</span><span>Композиция</span><span>Куда текст</span></div><div class="tbl-wrap"><table class="tbl"><tr><th>Было</th><th>Стало</th></tr><tr><td>«Сделай красивую сторис про вебинар»</td><td>«Сторис 9:16. Стиль: [из бренд-бука]. Сверху 60% пустого места под заголовок, снизу [объект]. Без текста.»</td></tr></table></div><div class="tbl-wrap"><table class="tbl"><tr><th>Кому</th><th>Что поручать</th></tr><tr><td><b>ChatGPT</b></td><td>картинка и атмосфера: фоны, обложки, иллюстрации</td></tr><tr><td><b>Claude</b></td><td>текст, цифры, точная вёрстка: посты, карусели, слайды</td></tr><tr><td><b>Вместе</b></td><td>фон из ChatGPT или Higgsfield, текст поверх — в Claude или Canva</td></tr></table></div><div class="note b"><svg><use href="#info"/></svg><span>Размер и формат пиши <b>в каждом промпте</b>. Сгенерила квадрат вместо сторис — всё обрежется.</span></div></div>
+<div class="card glass rv"><h3><span class="dot"></span>Техзадание, а не пожелание</h3><div class="pills"><span>Формат</span><span>Стиль</span><span>Сюжет</span><span>Цвет и свет</span><span>Композиция</span><span>Куда текст</span></div><div class="tbl-wrap"><table class="tbl"><tr><th>Было</th><th>Стало</th></tr><tr><td>«Сделай красивую сторис про вебинар»</td><td>«Сторис 9:16. Стиль: [из бренд-бука]. Сверху 60% пустого места под заголовок, снизу [объект]. Без текста.»</td></tr></table></div><div class="tbl-wrap"><table class="tbl"><tr><th>Кому</th><th>Что поручать</th></tr><tr><td><b>ChatGPT</b></td><td>картинка и атмосфера: фоны, обложки, иллюстрации</td></tr><tr><td><b>Claude</b></td><td>текст, цифры, точная вёрстка: посты, карусели, слайды</td></tr><tr><td><b>Вместе</b></td><td>фон из ChatGPT или Higgsfield, текст поверх — в Claude или Canva</td></tr></table></div></div>
+  </div>
+  <div class="block"><span class="step-tag">Семь приёмов работы с ИИ</span>
+<div class="card rv"><div class="tbl-wrap"><table class="tbl"><tr><th>Приём</th><th>Что писать</th></tr><tr><td><b>Три варианта</b></td><td>«Сделай 3 разных варианта и объясни, чем они отличаются»</td></tr><tr><td><b>Сначала вопросы</b></td><td>«Перед работой задай мне вопросы, которых не хватает»</td></tr><tr><td><b>Сначала кусочек</b></td><td>«Покажи обложку и один слайд, остальное — после одобрения»</td></tr><tr><td><b>Самопроверка</b></td><td>«Сверь результат с моим бренд-буком и исправь расхождения»</td></tr><tr><td><b>Что взять из референса</b></td><td>«Возьми из референса только сетку и отступы, цвета — мои»</td></tr><tr><td><b>Удачное — в скилл</b></td><td>«Сохрани этот процесс как скилл»</td></tr><tr><td><b>Одна задача — один чат</b></td><td>новая задача — новый чат внутри проекта</td></tr></table></div></div>
   </div>
   <div class="block"><span class="step-tag">Посты и сторис</span>
 <div class="grid2"><div class="card rv rv"><div class="prompt"><div class="prompt-top"><span>Графический пост · Claude</span><button class="copy" type="button">Скопировать</button></div>
@@ -1594,13 +1627,13 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
   <div class="block"><span class="step-tag">Мокапы</span>
 <div class="card glass rv"><p><b>Мокап</b> — твой дизайн на реальном предмете: телефоне, ноутбуке, упаковке.</p><div class="prompt"><div class="prompt-top"><span>Мокап с моим дизайном</span><button class="copy" type="button">Скопировать</button></div>
 <pre>Сделай мокап: мой дизайн на экране [телефона / ноутбука].
-Я прикрепила дизайн — помести его на экран без изменений:
+Дизайн во вложении — помести его на экран без изменений:
 текст, цвета и пропорции оставь как есть.
 Сцена: [где лежит устройство], свет мягкий, сбоку.
 Фон: [цвет из бренд-бука]. Ракурс: три четверти, сверху.
 Формат 4:5.</pre></div><div class="prompt"><div class="prompt-top"><span>Мокап упаковки</span><button class="copy" type="button">Скопировать</button></div>
 <pre>Сделай мокап упаковки: [коробка / пакет / банка] с моим логотипом.
-Я прикрепила логотип — не перерисовывай его.
+Логотип во вложении — не перерисовывай его.
 Материал: [матовый картон / глянец / стекло].
 Фон однотонный [HEX], мягкая тень, студийный свет.
 Формат 1:1.</pre></div><div class="note b"><svg><use href="#info"/></svg><span>Текст на экране поплыл? Попроси <b>пустой экран</b>, а дизайн наложи в Canva или в Claude.</span></div></div>
@@ -1613,14 +1646,14 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 1) через боль, 2) через результат, 3) через цифру.
 На каждом: заголовок до 6 слов, одна строка пояснения, кнопка.
 Формат 1080×1350. Стиль — по моему бренд-буку.
-Цифры бери только из того, что я написала.</pre></div><div class="prompt"><div class="prompt-top"><span>Один креатив под все форматы</span><button class="copy" type="button">Скопировать</button></div>
+Цифры бери только из этого сообщения.</pre></div><div class="prompt"><div class="prompt-top"><span>Один креатив под все форматы</span><button class="copy" type="button">Скопировать</button></div>
 <pre>Адаптируй этот креатив под форматы:
 1080×1350 (пост), 1080×1920 (сторис), 1080×1080 (квадрат).
 Текст и стиль не меняй — меняй только расположение элементов.
 В сторис оставь по 250 px сверху и снизу без текста.</pre></div><div class="prompt"><div class="prompt-top"><span>Картинка товара · Higgsfield</span><button class="copy" type="button">Скопировать</button></div>
 <pre>Через Higgsfield сделай рекламную картинку товара.
 Модель: Marketing Studio. Формат 4:5.
-Я прикрепила фото товара — сам товар не меняй.
+Фото товара во вложении — сам товар не меняй.
 Сцена: [где стоит товар], настроение: [3 слова].
 Оставь сверху место под заголовок.
 Перед генерацией скажи, сколько кредитов потратится.</pre></div></div>
@@ -1631,12 +1664,12 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 Проверь: воздух, контраст текста, один акцент, выравнивание
 по сетке, читается ли с телефона.
 Назови 3 самые заметные проблемы и исправь их.
-Стиль не меняй.</pre></div><div class="pills"><span>«больше воздуха»</span><span>«заголовок крупнее»</span><span>«акцент только на одном слове»</span><span>«выровняй по сетке»</span></div></div>
+Стиль не меняй.</pre></div></div>
   </div>
   <div class="tracker rv at-end" data-tracker="8">
     <div class="tr-head"><h3>📍 Трекер папки</h3><span class="tr-count"><b>0</b>/4</span></div>
     <div class="tr-bar"><i></i></div>
-    <div class="checks"><button class="check" data-check="8-formula" type="button"><span>Разобрала формулу промпта</span><span class="sw"></span></button><button class="check" data-check="8-post" type="button"><span>Сделала пост или сторис</span><span class="sw"></span></button><button class="check" data-check="8-mock" type="button"><span>Сделала мокап</span><span class="sw"></span></button><button class="check" data-check="8-ad" type="button"><span>Сделала 3 креатива</span><span class="sw"></span></button></div>
+    <div class="checks"><button class="check" data-check="8-formula" type="button"><span>Формула промпта разобрана</span><span class="sw"></span></button><button class="check" data-check="8-post" type="button"><span>Пост или сторис готовы</span><span class="sw"></span></button><button class="check" data-check="8-mock" type="button"><span>Мокап готов</span><span class="sw"></span></button><button class="check" data-check="8-ad" type="button"><span>3 креатива готовы</span><span class="sw"></span></button></div>
   </div>
   <div class="next"><button class="btn" data-go="7" type="button">← Папка «Скиллы»</button><button class="btn pink" data-go="6" type="button">Словарь <svg><use href="#arrow"/></svg></button></div>
 </section>
@@ -1675,7 +1708,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 <pre>Сделай рекламную картинку 4:5 в приёме «гигантский объект».
 Объект: [мой продукт] размером с [грузовик / здание / человека].
 Сцена: [улица, фасад, двор], реалистичное фото, естественный свет.
-На объекте мой логотип — я его прикрепила, не перерисовывай.
+На объекте мой логотип — он во вложении, не перерисовывай.
 Вариант 2: тот же продукт, вид изнутри [стакана / пакета] вверх на небо.</pre></div>
   </div>
   <div class="rf-group" hidden data-rf="play">
@@ -1741,7 +1774,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 <!-- ================= GLOSSARY ================= -->
 <section class="lesson" data-lesson="6" id="l6">
   <div class="sec-head"><div class="key num b"><svg style="width:26px;height:26px"><use href="#chat"/></svg></div><div><span class="kicker">Папка · 30 слов простым языком</span><h2>Сло<em>варь</em></h2></div></div>
-  <p class="sub">Встретила непонятное слово — <b>ищи его здесь.</b></p>
+  <p class="sub">Непонятное слово — <b>ищи его здесь.</b></p>
 
   <div class="gl-tools">
     <input class="gl-search" id="glSearch" type="search" placeholder="Найти слово: референс, мокап, HEX…" autocomplete="off">
@@ -1825,9 +1858,9 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
     <details class="qa"><summary>Нет Claude Design<span class="pm"></span></summary><p>Доступ зависит от тарифа. Открой claude.ai/design напрямую. Если раздела нет — собери презентацию в обычном чате Claude или в Canva.</p></details>
     <details class="qa"><summary>Скилл не виден<span class="pm"></span></summary><p>Проверь, что он включён в Customize → Skills. В Claude Code открой новую сессию в той же папке и введи /.</p></details>
     <details class="qa"><summary>Нет кнопки или пункта меню<span class="pm"></span></summary><p>Интерфейсы часто обновляются. Ищи похожее название рядом или спроси саму нейросеть: «Где в настройках найти …?»</p></details>
-    <details class="qa"><summary>Прогресс пропал<span class="pm"></span></summary><p>Отметки хранятся в браузере. Если чистила браузер или зашла с другого устройства — нажми «Восстановить» в общем трекере и выбери сохранённый файл.</p></details>
+    <details class="qa"><summary>Прогресс пропал<span class="pm"></span></summary><p>Отметки хранятся в браузере. После очистки браузера или на другом устройстве нажми «Восстановить» в общем трекере и выбери сохранённый файл.</p></details>
   </div>
-  <div class="note"><svg><use href="#heart"/></svg><span>Не нашла ответ — <a href="https://t.me/kkkkkkkkati" target="_blank" rel="noopener"><b>напиши мне в Telegram</b></a>.</span></div>
+  <div class="note"><svg><use href="#heart"/></svg><span>Нет ответа — <a href="https://t.me/kkkkkkkkati" target="_blank" rel="noopener"><b>напиши мне в Telegram</b></a>.</span></div>
 </section>
 
 
