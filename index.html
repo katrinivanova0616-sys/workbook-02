@@ -284,7 +284,7 @@ pre{margin:0;padding:18px;font:13.5px/1.65 "JetBrains Mono",ui-monospace,monospa
 .finder-title{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;font:600 13px -apple-system,BlinkMacSystemFont,"SF Pro Text",Manrope,sans-serif;color:#3a3a40}
 .finder-title svg{width:15px;height:15px;color:#4ea4ef}
 .finder-count{font:500 12px -apple-system,BlinkMacSystemFont,Manrope,sans-serif;color:var(--ink-3)}
-.folders{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:2px;padding:22px 16px 18px}
+.folders{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:2px;padding:22px 16px 18px}
 .folder-btn{display:flex;flex-direction:column;align-items:center;gap:4px;border:none;background:none;cursor:pointer;padding:10px 6px 12px;border-radius:14px;font:inherit;color:var(--ink);transition:background .2s}
 .folder-btn:hover{background:rgba(0,0,0,.035)}
 .folder-btn:hover .ficon{transform:translateY(-3px) scale(1.04)}
@@ -450,7 +450,7 @@ footer{padding:50px 0 90px;text-align:center}
 
 .count{text-decoration:none}
 @media (max-width:860px){
-  .folders{grid-template-columns:repeat(10,minmax(104px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 10px 14px;scrollbar-width:none}
+  .folders{grid-template-columns:repeat(11,minmax(104px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 10px 14px;scrollbar-width:none}
   .ficon{width:76px;height:62px}
   .finder-count{display:none}
   .folders::-webkit-scrollbar{display:none}
@@ -1100,6 +1100,9 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 .crsel-strip{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 12px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
 .crsel-strip img{flex:none;width:170px;aspect-ratio:4/5;object-fit:cover;border-radius:14px;box-shadow:0 0 0 1px rgba(20,20,40,.06),0 10px 22px rgba(20,20,60,.12);scroll-snap-align:start}
 @media (max-width:720px){.crsel-strip img{width:132px}}
+.folder-btn:nth-child(11){animation-delay:1.16s}
+@media (min-width:861px){.folder-btn .flabel{font-size:11.5px;padding:2px 4px}.folder-btn .ficon{transform:scale(.86)}}
+@media (min-width:861px){.learn-g{grid-template-columns:repeat(4,1fr)}}
 </style>
 </head>
 <body>
@@ -1137,7 +1140,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 <div class="bar"><div class="bar-in">
   <div class="brand">НЕЙРО<em>ПЕДАЛИРОВАНИЕ</em></div>
   <nav class="nav" id="nav">
-    <a href="#l1" data-go="1">Референсы</a><a href="#l2" data-go="2">Стиль</a><a href="#l3" data-go="3">Коннекторы</a><a href="#l4" data-go="4">Карусели</a><a href="#l5" data-go="5">Презентации</a><a href="#l7" data-go="7">Скиллы</a><a href="#l8" data-go="8">Промпты</a><a href="#l10" data-go="10">Идеи</a><a href="#l6" data-go="6">Словарь</a><a href="#l9" data-go="9">Сохранённое</a>
+    <a href="#l1" data-go="1">Референсы</a><a href="#l2" data-go="2">Стиль</a><a href="#l3" data-go="3">Коннекторы</a><a href="#l4" data-go="4">Карусели</a><a href="#l5" data-go="5">Презентации</a><a href="#l11" data-go="11">Автопостинг</a><a href="#l7" data-go="7">Скиллы</a><a href="#l8" data-go="8">Промпты</a><a href="#l10" data-go="10">Идеи</a><a href="#l6" data-go="6">Словарь</a><a href="#l9" data-go="9">Сохранённое</a>
   </nav>
   <a class="count" href="#finish" title="Общий прогресс"><b id="cnt">0%</b> готово</a>
 </div></div>
@@ -1218,7 +1221,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
   </div></div>
 
   <div class="finder" id="folders">
-    <div class="finder-bar"><span class="lights"><i></i><i></i><i></i></span><span class="finder-title"><svg><use href="#folder"/></svg>Воркбук 02 — AI-дизайн</span><span class="finder-count">10 папок</span></div>
+    <div class="finder-bar"><span class="lights"><i></i><i></i><i></i></span><span class="finder-title"><svg><use href="#folder"/></svg>Воркбук 02 — AI-дизайн</span><span class="finder-count">11 папок</span></div>
     <div class="folders">
       <button class="folder-btn" data-go="1" type="button">
         <span class="ficon"><svg viewBox="0 0 96 78" aria-hidden="true"><use class="fb" href="#fback"/><rect class="paper" x="8" y="13" width="80" height="22" rx="3"/><use class="ff" href="#ffront"/><path class="shine" d="M7 19.6h82"/></svg><svg class="glyph" aria-hidden="true"><use href="#heart"/></svg></span>
@@ -1244,6 +1247,11 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
         <span class="ficon"><svg viewBox="0 0 96 78" aria-hidden="true"><use class="fb" href="#fback"/><rect class="paper" x="8" y="13" width="80" height="22" rx="3"/><use class="ff" href="#ffront"/><path class="shine" d="M7 19.6h82"/></svg><svg class="glyph" aria-hidden="true"><use href="#play"/></svg></span>
         <span class="flabel">Презентации</span><span class="fn">Урок 05</span>
         <span class="fbar"><i data-fbar="5"></i></span>
+      </button>
+      <button class="folder-btn" data-go="11" type="button">
+        <span class="ficon"><svg viewBox="0 0 96 78" aria-hidden="true"><use class="fb" href="#fback"/><rect class="paper" x="8" y="13" width="80" height="22" rx="3"/><use class="ff" href="#ffront"/><path class="shine" d="M7 19.6h82"/></svg><svg class="glyph" aria-hidden="true"><use href="#arrow"/></svg></span>
+        <span class="flabel">Автопостинг</span><span class="fn">Урок 06</span>
+        <span class="fbar"><i data-fbar="11"></i></span>
       </button>
       <button class="folder-btn" data-go="7" type="button">
         <span class="ficon"><svg viewBox="0 0 96 78" aria-hidden="true"><use class="fb" href="#fback"/><rect class="paper" x="8" y="13" width="80" height="22" rx="3"/><use class="ff" href="#ffront"/><path class="shine" d="M7 19.6h82"/></svg><svg class="glyph" aria-hidden="true"><use href="#star"/></svg></span>
@@ -1278,7 +1286,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 
 <!-- ================= LESSON 1 ================= -->
 <section class="lesson on" data-lesson="1" id="l1">
-  <div class="sec-head"><div class="key num">01</div><div><span class="kicker">Урок 1 из 5 · 30–40 минут</span><h2>Рефе<em>ренсы</em></h2></div></div>
+  <div class="sec-head"><div class="key num">01</div><div><span class="kicker">Урок 1 из 6 · 30–40 минут</span><h2>Рефе<em>ренсы</em></h2></div></div>
   <p class="sub">Собери примеры в Pinterest — <b>и нейросеть поймёт твой вкус.</b></p>
 
 <div id="need" class="need rv">
@@ -1290,6 +1298,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
       <div class="learn-i"><em>04</em><b>Собирать карусели под ключ</b><p>Выбрать тип и обложку, написать текст, сверстать, оживить слайд и написать подпись.</p></div>
       <div class="learn-i"><em>05</em><b>Делать презентации из текста</b><p>Превращать свой текст в слайды и доводить их в Claude Design.</p></div>
       <div class="learn-i"><em>06</em><b>Упаковывать продукт</b><p>Делать мокапы и рекламные креативы по готовым промптам.</p></div>
+      <div class="learn-i"><em>07</em><b>Выкладывать из чата</b><p>Подключить Ару и публиковать карусели по расписанию с превью и подтверждением.</p></div>
     </div>
   </div>
   <div class="need-h"><span class="step-tag">Что понадобится</span><p>Открой и войди заранее — тогда уроки пойдут без остановок.</p></div>
@@ -1346,7 +1355,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 
 <!-- ================= LESSON 2 ================= -->
 <section class="lesson" data-lesson="2" id="l2">
-  <div class="sec-head"><div class="key num b">02</div><div><span class="kicker">Урок 2 из 5 · 30 минут</span><h2>Свой <em>стиль</em></h2></div></div>
+  <div class="sec-head"><div class="key num b">02</div><div><span class="kicker">Урок 2 из 6 · 30 минут</span><h2>Свой <em>стиль</em></h2></div></div>
   <p class="sub">Бренд-бук один раз — <b>и стиль применяется всегда.</b></p>
 
   <div class="block"><span class="step-tag">Шаг 1 · Что такое бренд-бук</span>
@@ -1385,7 +1394,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 
 <!-- ================= LESSON 3 ================= -->
 <section class="lesson" data-lesson="3" id="l3">
-  <div class="sec-head"><div class="key num">03</div><div><span class="kicker">Урок 3 из 5 · 20–30 минут</span><h2>Canva <em>и Higgsfield</em></h2></div></div>
+  <div class="sec-head"><div class="key num">03</div><div><span class="kicker">Урок 3 из 6 · 20–30 минут</span><h2>Canva <em>и Higgsfield</em></h2></div></div>
   <p class="sub">Подключи сервисы — <b>дизайн и картинки прямо из чата.</b></p>
 
   <div class="block"><span class="step-tag">Сначала · Зачем подключать</span>
@@ -1423,7 +1432,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 
 <!-- ================= LESSON 4 ================= -->
 <section class="lesson" data-lesson="4" id="l4">
-  <div class="sec-head"><div class="key num b">04</div><div><span class="kicker">Урок 4 из 5 · 40–60 минут</span><h2>Кару<em>сели</em></h2></div></div>
+  <div class="sec-head"><div class="key num b">04</div><div><span class="kicker">Урок 4 из 6 · 40–60 минут</span><h2>Кару<em>сели</em></h2></div></div>
   <p class="sub">Текст → вёрстка → движение. <b>Строго по порядку.</b></p>
 
   <div class="block"><span class="step-tag">Шаг 1 · Из чего состоит карусель</span>
@@ -1586,7 +1595,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 
 <!-- ================= LESSON 5 ================= -->
 <section class="lesson" data-lesson="5" id="l5">
-  <div class="sec-head"><div class="key num">05</div><div><span class="kicker">Урок 5 из 5 · 40–60 минут</span><h2>Презен<em>тации</em></h2></div></div>
+  <div class="sec-head"><div class="key num">05</div><div><span class="kicker">Урок 5 из 6 · 40–60 минут</span><h2>Презен<em>тации</em></h2></div></div>
   <p class="sub">Твой текст → готовые слайды. <b>И Claude Design.</b></p>
 
   <div class="block"><span class="step-tag">Шаг 1 · Параметры презентации</span>
@@ -1656,7 +1665,51 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
   <p>Один материал — два формата. Возьмём готовую карусель из <a href="#l4" data-go="4"><b>Урока 4</b></a> и соберём из неё рилс: сценарий, движение, обложка.</p>
   <div class="pills"><span>карусель → рилс</span><span>один материал</span><span>монтаж в Claude</span></div></div>
 
-  <div class="next"><button class="btn" data-go="4" type="button">← Урок 4</button><button class="btn pink" data-go="7" type="button">Папка «Скиллы» <svg><use href="#arrow"/></svg></button></div>
+  <div class="next"><button class="btn" data-go="4" type="button">← Урок 4</button><button class="btn pink" data-go="11" type="button">Урок 6 · Автопостинг <svg><use href="#arrow"/></svg></button></div>
+</section>
+
+<!-- ================= LESSON 6 ================= -->
+<section class="lesson" data-lesson="11" id="l11">
+  <div class="sec-head"><div class="key num b">06</div><div><span class="kicker">Урок 6 из 6 · 20–30 минут</span><h2>Авто<em>постинг</em></h2></div></div>
+  <p class="sub">Собрал карусель — <b>выложи её прямо из чата.</b></p>
+
+  <div class="block"><span class="step-tag">Сначала · Зачем это</span>
+<div class="card glass b rv"><h3><span class="dot b"></span>Claude сам в Instagram не выкладывает</h3><p>У нейросети нет доступа к твоим соцсетям. Нужен сервис-посредник, который держит подключённые аккаунты. Здесь это <b>Ара</b>: ты просишь в чате — она публикует.</p><div class="tbl-wrap"><table class="tbl"><tr><th>Что умеет Ара</th><th>Подробнее</th></tr><tr><td><b>Публиковать</b></td><td>карусель, фото, рилс и сторис — в Instagram, TikTok и YouTube</td></tr><tr><td><b>По расписанию</b></td><td>сейчас или в назначенный день и час</td></tr><tr><td><b>Собрать карусель</b></td><td>из темы или фактов: текст, фоны и готовые слайды, 3–15 штук</td></tr><tr><td><b>Пробный рилс</b></td><td>сначала показывается не подписчикам. Только для рилсов и от 1000 подписчиков</td></tr></table></div></div>
+  </div>
+  <div class="block"><span class="step-tag">Шаг 1 · Подключи Ару</span>
+<div class="card glass rv"><ol class="steps"><li>Зарегистрируйся в <b>Аре</b> и подключи там свои аккаунты соцсетей. Вход в Instagram делаешь <b>вручную</b> — нейросеть пароль не видит.</li><li>В Claude: <b>Customize → Connectors → Add custom connector</b>. Адрес сервера возьми в личном кабинете Ары.</li><li>В ChatGPT: <b>Настройки → Приложения</b> — добавь Ару тем же адресом.</li><li>Проверь в новом чате:</li></ol><div class="prompt"><div class="prompt-top"><span>Проверка</span><button class="copy" type="button">Скопировать</button></div>
+<pre>Какие аккаунты подключены в Аре и сколько осталось кредитов?</pre></div><div class="note b"><svg><use href="#info"/></svg><span>Новые аккаунты соцсетей подключаются только в самой Аре, из чата это сделать нельзя.</span></div></div>
+  </div>
+  <div class="block"><span class="step-tag">Шаг 2 · Выложи карусель</span>
+<div class="card rv"><ol class="steps"><li>Собери карусель и сохрани слайды в <b>PNG</b> — <a href="#l4" data-go="4"><b>Урок 4</b></a>.</li><li>Прикрепи слайды по порядку и отправь промпт.</li><li>Ара покажет <b>превью</b>: куда, когда и с какой подписью. Прочитай его.</li><li>Ответь <b>«да»</b> — только после этого пост уйдёт.</li></ol><div class="prompt"><div class="prompt-top"><span>Опубликовать карусель</span><button class="copy" type="button">Скопировать</button></div>
+<pre>Через Ару опубликуй эти слайды каруселью в Instagram, аккаунт [ник].
+Порядок слайдов — как во вложении.
+Подпись: [вставь подпись].
+Когда: [сейчас / дата и время, часовой пояс Москва].
+Сначала покажи превью и ничего не публикуй, пока я не отвечу «да».</pre></div><div class="prompt"><div class="prompt-top"><span>Запланировать на неделю</span><button class="copy" type="button">Скопировать</button></div>
+<pre>Через Ару запланируй 3 поста на эту неделю в Instagram, аккаунт [ник]:
+вторник 12:00, четверг 12:00, суббота 11:00 по Москве.
+Посты — во вложении, подписи ниже по порядку: [подписи].
+Покажи расписание и превью каждого поста. Публикуй только после моего «да».</pre></div></div>
+  </div>
+  <div class="block"><span class="step-tag">Шаг 3 · Карусель одной командой</span>
+<div class="card glass rv"><p>Нет времени верстать — Ара соберёт карусель сама. Стиль выбирается из её готовых, а не из твоего бренд-бука.</p><div class="prompt"><div class="prompt-top"><span>Карусель из фактов</span><button class="copy" type="button">Скопировать</button></div>
+<pre>Через Ару сделай карусель на [8] слайдов, формат 4:5.
+Тема: [тема]. Факты, из которых её собрать: [вставь факты].
+Ничего сверх этих фактов не добавляй.
+Перед запуском скажи, сколько кредитов это стоит.
+Покажи слайды и подпись. Не публикуй без моего «да».</pre></div><div class="note b"><svg><use href="#info"/></svg><span>Генерация тратит <b>кредиты Ары</b>. Нужен свой стиль — собери карусель в Claude, а Аре оставь только публикацию.</span></div></div>
+  </div>
+  <div class="block"><span class="step-tag">Шаг 4 · Правила безопасности</span>
+<div class="card rv"><div class="tbl-wrap"><table class="tbl"><tr><th>Правило</th><th>Почему</th></tr><tr><td><b>Всегда проси превью</b></td><td>опубликованный пост обратно не вернёшь — его уже увидели</td></tr><tr><td><b>Публикация только после «да»</b></td><td>нейросеть не должна решать за тебя, что и когда выходит</td></tr><tr><td><b>Проверяй аккаунт</b></td><td>если подключено несколько, пост может уйти не туда</td></tr><tr><td><b>Время пиши с часовым поясом</b></td><td>иначе пост выйдет на несколько часов раньше или позже</td></tr></table></div></div>
+  </div>
+  <div class="tracker rv at-end" data-tracker="11">
+    <div class="tr-head"><h3>📍 Трекер урока</h3><span class="tr-count"><b>0</b>/4</span></div>
+    <div class="tr-bar"><i></i></div>
+    <div class="checks"><button class="check" data-check="11-conn" type="button"><span>Ара подключена</span><span class="sw"></span></button><button class="check" data-check="11-acc" type="button"><span>Аккаунт соцсети подключён в Аре</span><span class="sw"></span></button><button class="check" data-check="11-prev" type="button"><span>Превью поста проверено</span><span class="sw"></span></button><button class="check" data-check="11-post" type="button"><span>Первая карусель опубликована</span><span class="sw"></span></button></div>
+  </div>
+
+  <div class="next"><button class="btn" data-go="5" type="button">← Урок 5</button><button class="btn pink" data-go="7" type="button">Папка «Скиллы» <svg><use href="#arrow"/></svg></button></div>
 </section>
 
 <!-- ================= SKILLS ================= -->
@@ -1985,7 +2038,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
   /* favorites */
   var favs=store.get('wb02-favs')||[];
   function hash(t){var h=0;for(var i=0;i<t.length;i++){h=(h*31+t.charCodeAt(i))|0}return 'p'+(h>>>0).toString(36)}
-  var lessonNames={1:'Урок 1 · Референсы',2:'Урок 2 · Свой стиль',3:'Урок 3 · Коннекторы',4:'Урок 4 · Карусели',5:'Урок 5 · Презентации',7:'Папка · Скиллы',8:'Папка · Промпты',10:'Папка · Идеи'};
+  var lessonNames={1:'Урок 1 · Референсы',2:'Урок 2 · Свой стиль',3:'Урок 3 · Коннекторы',4:'Урок 4 · Карусели',5:'Урок 5 · Презентации',7:'Папка · Скиллы',8:'Папка · Промпты',10:'Папка · Идеи',11:'Урок 6 · Автопостинг'};
   document.querySelectorAll('.lesson:not([data-lesson="9"]) .prompt').forEach(function(pr){
     var title=(pr.querySelector('.prompt-top span')||{}).textContent||'';
     var pid=hash(title+'|'+pr.querySelector('pre').textContent.slice(0,80));
@@ -2044,7 +2097,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
     document.querySelectorAll('.lesson').forEach(function(l){l.classList.toggle('on',l.dataset.lesson===n)});
     document.querySelectorAll('.folder-btn').forEach(function(f){f.classList.toggle('on',f.dataset.go===n)});
     document.querySelectorAll('#nav a,.tabbar a[data-go]').forEach(function(a){a.classList.toggle('act',a.dataset.go===n)});
-    var th=document.getElementById('tbHome');if(th)th.classList.toggle('act',+n<6||+n===10);
+    var th=document.getElementById('tbHome');if(th)th.classList.toggle('act',+n<6||+n>=10);
     var fc=document.querySelector('#folders .folders'),fo=fc.querySelector('.folder-btn.on');if(fo&&fc.scrollWidth>fc.clientWidth){fc.scrollTo({left:fo.offsetLeft-16,behavior:'smooth'})}
     store.set('wb02-lesson',n);
     try{history.replaceState(null,'','#lesson-'+n)}catch(e){}
@@ -2052,15 +2105,15 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
     document.querySelectorAll('.lesson.on .rv').forEach(function(el){el.classList.add('in')});
   }
   document.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();openLesson(b.dataset.go,true)})});
-  var start=(location.hash.match(/^#(?:lesson-|l)(10|[1-9])$/)||[])[1]||store.get('wb02-lesson')||'1';
+  var start=(location.hash.match(/^#(?:lesson-|l)(10|11|[1-9])$/)||[])[1]||store.get('wb02-lesson')||'1';
   openLesson(start,false);
 
   /* trackers */
   var checks=store.get('wb02-checks')||{};
   var fg=document.getElementById('ringFg'),C=2*Math.PI*55,bars=document.getElementById('lessonBars');
-  [1,2,3,4,5,7,8].forEach(function(n){
+  [1,2,3,4,5,11,7,8].forEach(function(n){
     var b=document.createElement('button');b.type='button';b.className='lb';b.dataset.go=n;
-    b.innerHTML='<span>'+(n>5?'':'0'+n)+' '+names[n-1]+'</span><i><u data-lb="'+n+'"></u></i><em data-lbt="'+n+'">0%</em>';
+    b.innerHTML='<span>'+(n===11?'06 Автопостинг':(n>5?'':'0'+n)+' '+names[n-1])+'</span><i><u data-lb="'+n+'"></u></i><em data-lbt="'+n+'">0%</em>';
     b.addEventListener('click',function(){openLesson(n,true)});bars.appendChild(b);
   });
   function paint(){
