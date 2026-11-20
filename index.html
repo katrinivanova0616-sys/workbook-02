@@ -1080,6 +1080,8 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 .learn-i p{margin-top:5px;font-size:13.5px;line-height:1.45;color:#6b6b7b}
 @media (max-width:860px){.learn-g{grid-template-columns:1fr 1fr}}
 @media (max-width:720px){.learn-g{gap:9px}.learn-i{padding:13px 12px;border-radius:18px}.learn-i b{font-size:14.5px}.learn-i p{font-size:12.5px}}
+.rf-boxget{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);white-space:nowrap}
+.rf-group .links{margin-top:6px}
 </style>
 </head>
 <body>
@@ -1721,8 +1723,22 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 <!-- ================= IDEAS ================= -->
 <section class="lesson" data-lesson="10" id="l10">
   <div class="sec-head"><div class="key num"><svg style="width:26px;height:26px"><use href="#heart"/></svg></div><div><span class="kicker">Папка · 72 референса по приёмам</span><h2>Иде<em>и</em></h2></div></div>
-  <p class="sub">Смотри, какой приём цепляет, — <b>и забирай его промптом.</b></p>
+  <p class="sub">Смотри, какой приём цепляет, — <b>и повторяй с одним промптом.</b></p>
 
+  <div class="card glass rv" id="rfUni"><h3><span class="dot"></span>Один промпт на любой референс</h3>
+  <ol class="steps"><li>Открой картинку, которая цепляет, и <b>сохрани</b> её.</li><li>Прикрепи её в <b>ChatGPT</b> или <b>Claude</b> вместе с <b>фото своего продукта</b>.</li><li>Вставь промпт и замени то, что в скобках.</li></ol>
+  <div class="prompt"><div class="prompt-top"><span>Универсальный · сделай так с моим продуктом</span><button class="copy" type="button">Скопировать</button></div>
+<pre>Во вложении референс. Отсканируй его и разбери стиль:
+композиция, ракурс, свет, палитра, шрифты и главный приём —
+за счёт чего картинка цепляет.
+Потом сделай новую картинку в этом же стиле и с этим же приёмом, но:
+— вместо их продукта — мой: [что это] (фото во вложении, сам продукт не меняй);
+— вместо их текста — мой: «[заголовок]» и «[строка пояснения]»;
+— цвета: [оставь как в референсе / возьми мои: HEX].
+Формат: [4:5 / 9:16 / 1:1].
+Чужие логотипы, названия брендов и лица не повторяй.
+Сначала коротко напиши, что берёшь из референса, потом покажи 2 варианта.</pre></div>
+  <div class="note b"><svg><use href="#info"/></svg><span>Текст на картинке вышел с ошибками? Попроси ту же картинку <b>без текста</b> и добавь надписи в Claude или Canva. В Claude картинку рисует Higgsfield — он должен быть подключён.</span></div></div>
   <div class="rf-board rv">
     <button class="rf-stack n4" type="button" data-rf="ui"><i class="rf-pin"></i><span class="rf-pile"><img src="refs/7.jpg" alt="" loading="lazy" class="c1"><img src="refs/10.jpg" alt="" loading="lazy" class="c2"><img src="refs/14.jpg" alt="" loading="lazy" class="c3"><img src="refs/24.jpg" alt="" loading="lazy" class="c4"></span><span class="rf-lab"><em>01</em><b>Интерфейс как реквизит</b><small>9 шт. · открыть</small></span></button>
     <button class="rf-stack n4" type="button" data-rf="scale"><i class="rf-pin"></i><span class="rf-pile"><img src="refs/32.jpg" alt="" loading="lazy" class="c1"><img src="refs/31.jpg" alt="" loading="lazy" class="c2"><img src="refs/33.jpg" alt="" loading="lazy" class="c3"><img src="refs/29.jpg" alt="" loading="lazy" class="c4"></span><span class="rf-lab"><em>02</em><b>Масштаб и ракурс</b><small>9 шт. · открыть</small></span></button>
@@ -1735,122 +1751,63 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
     <button class="rf-stack n4" type="button" data-rf="ad2"><i class="rf-pin"></i><span class="rf-pile"><img src="refs/44.jpg" alt="" loading="lazy" class="c1"><img src="refs/47.jpg" alt="" loading="lazy" class="c2"><img src="refs/59.jpg" alt="" loading="lazy" class="c3"><img src="refs/60.jpg" alt="" loading="lazy" class="c4"></span><span class="rf-lab"><em>09</em><b>Сюр с человеком</b><small>9 шт. · открыть</small></span></button>
     <button class="rf-stack n3" type="button" data-rf="ad3"><i class="rf-pin"></i><span class="rf-pile"><img src="refs/56.jpg" alt="" loading="lazy" class="c1"><img src="refs/53.jpg" alt="" loading="lazy" class="c2"><img src="refs/58.jpg" alt="" loading="lazy" class="c3"></span><span class="rf-lab"><em>10</em><b>Наружная реклама</b><small>3 шт. · открыть</small></span></button>
   </div>
-  <p class="rf-hint" id="rfHint">Наведи на стопку — она раскроется. Нажми — откроется вся группа с промптом.</p>
+  <p class="rf-hint" id="rfHint">Наведи на стопку — она раскроется. Нажми — откроется вся группа.</p>
   <div class="links rf-tools" id="rfTools" hidden><button class="btn" type="button" id="rfBack">← К доске</button><button class="btn" type="button" id="rfAll">Показать все группы</button></div>
   <div class="rf-group" hidden data-rf="ui">
     <div class="rf-head"><span class="rf-n">01</span><div><h3>Интерфейс как реквизит</h3><p>Знакомое окно телефона — AirDrop, заметки, карта, плейлист, пост — вынесено в реальный кадр. Глаз цепляется, потому что это узнаётся за секунду.</p></div><span class="rf-where">ChatGPT · Higgsfield</span></div>
     <div class="rf-grid"><button class="rf-card" type="button" data-src="refs/7.jpg" aria-label="Открыть референс"><img src="refs/7.jpg" alt="Референс: интерфейс как реквизит" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/10.jpg" aria-label="Открыть референс"><img src="refs/10.jpg" alt="Референс: интерфейс как реквизит" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/14.jpg" aria-label="Открыть референс"><img src="refs/14.jpg" alt="Референс: интерфейс как реквизит" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/24.jpg" aria-label="Открыть референс"><img src="refs/24.jpg" alt="Референс: интерфейс как реквизит" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/36.jpg" aria-label="Открыть референс"><img src="refs/36.jpg" alt="Референс: интерфейс как реквизит" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/37.jpg" aria-label="Открыть референс"><img src="refs/37.jpg" alt="Референс: интерфейс как реквизит" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/39.jpg" aria-label="Открыть референс"><img src="refs/39.jpg" alt="Референс: интерфейс как реквизит" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/40.jpg" aria-label="Открыть референс"><img src="refs/40.jpg" alt="Референс: интерфейс как реквизит" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/41.jpg" aria-label="Открыть референс"><img src="refs/41.jpg" alt="Референс: интерфейс как реквизит" loading="lazy"></button></div>
-    <div class="prompt"><div class="prompt-top"><span>Забрать приём · Интерфейс как реквизит</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Сделай картинку 4:5 в приёме «интерфейс как реквизит».
-В кадре: [кто или что, где].
-Поверх кадра или в руках — окно [AirDrop / заметки / карта / плейлист / пост]
-в стиле iOS: белая карточка, скруглённые углы, мягкая тень.
-Текст в окне: «[твой текст]».
-Реалистичное фото, дневной свет. Без логотипов чужих брендов.</pre></div>
+    <div class="links"><button class="btn pink rf-get" type="button">Скопировать универсальный промпт <svg><use href="#arrow"/></svg></button></div>
   </div>
   <div class="rf-group" hidden data-rf="scale">
     <div class="rf-head"><span class="rf-n">02</span><div><h3>Масштаб и ракурс</h3><p>Обычный предмет стал огромным или снят с точки, откуда никто не смотрит: со дна стакана, из пакета. Работает без единого слова.</p></div><span class="rf-where">Higgsfield · ChatGPT</span></div>
     <div class="rf-grid"><button class="rf-card" type="button" data-src="refs/32.jpg" aria-label="Открыть референс"><img src="refs/32.jpg" alt="Референс: масштаб и ракурс" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/31.jpg" aria-label="Открыть референс"><img src="refs/31.jpg" alt="Референс: масштаб и ракурс" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/33.jpg" aria-label="Открыть референс"><img src="refs/33.jpg" alt="Референс: масштаб и ракурс" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/29.jpg" aria-label="Открыть референс"><img src="refs/29.jpg" alt="Референс: масштаб и ракурс" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/35.jpg" aria-label="Открыть референс"><img src="refs/35.jpg" alt="Референс: масштаб и ракурс" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/63.jpg" aria-label="Открыть референс"><img src="refs/63.jpg" alt="Референс: масштаб и ракурс" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/71.jpg" aria-label="Открыть референс"><img src="refs/71.jpg" alt="Референс: масштаб и ракурс" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/74.jpg" aria-label="Открыть референс"><img src="refs/74.jpg" alt="Референс: масштаб и ракурс" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/75.jpg" aria-label="Открыть референс"><img src="refs/75.jpg" alt="Референс: масштаб и ракурс" loading="lazy"></button></div>
-    <div class="prompt"><div class="prompt-top"><span>Забрать приём · Масштаб и ракурс</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Сделай рекламную картинку 4:5 в приёме «гигантский объект».
-Объект: [мой продукт] размером с [грузовик / здание / человека].
-Сцена: [улица, фасад, двор], реалистичное фото, естественный свет.
-На объекте мой логотип — он во вложении, не перерисовывай.
-Вариант 2: тот же продукт, вид изнутри [стакана / пакета] вверх на небо.</pre></div>
+    <div class="links"><button class="btn pink rf-get" type="button">Скопировать универсальный промпт <svg><use href="#arrow"/></svg></button></div>
   </div>
   <div class="rf-group" hidden data-rf="play">
     <div class="rf-head"><span class="rf-n">03</span><div><h3>Игра с объектом</h3><p>Объект заменяет фон, превращается в пиксели, обрастает подписями или текстом по форме. Один понятный трюк на картинку.</p></div><span class="rf-where">Claude · ChatGPT</span></div>
     <div class="rf-grid"><button class="rf-card" type="button" data-src="refs/21.jpg" aria-label="Открыть референс"><img src="refs/21.jpg" alt="Референс: игра с объектом" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/28.jpg" aria-label="Открыть референс"><img src="refs/28.jpg" alt="Референс: игра с объектом" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/30.jpg" aria-label="Открыть референс"><img src="refs/30.jpg" alt="Референс: игра с объектом" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/38.jpg" aria-label="Открыть референс"><img src="refs/38.jpg" alt="Референс: игра с объектом" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/34.jpg" aria-label="Открыть референс"><img src="refs/34.jpg" alt="Референс: игра с объектом" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/26.jpg" aria-label="Открыть референс"><img src="refs/26.jpg" alt="Референс: игра с объектом" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/73.jpg" aria-label="Открыть референс"><img src="refs/73.jpg" alt="Референс: игра с объектом" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/79.jpg" aria-label="Открыть референс"><img src="refs/79.jpg" alt="Референс: игра с объектом" loading="lazy"></button></div>
-    <div class="prompt"><div class="prompt-top"><span>Забрать приём · Игра с объектом</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Сделай обложку 4:5, где главный объект — [предмет].
-Трюк на выбор:
-1) объект лежит как подложка, а на нём — мои карточки или слайды;
-2) объект собран из крупных пикселей, как в Minecraft;
-3) от объекта идут тонкие линии с подписями: [3–5 слов];
-4) текст «[фраза]» идёт по кругу вокруг объекта.
-Фон однотонный [HEX], шрифты и цвета — по моему бренд-буку.</pre></div>
+    <div class="links"><button class="btn pink rf-get" type="button">Скопировать универсальный промпт <svg><use href="#arrow"/></svg></button></div>
   </div>
   <div class="rf-group" hidden data-rf="glass">
     <div class="rf-head"><span class="rf-n">04</span><div><h3>Стекло и карточки</h3><p>Полупрозрачные карточки с размытием парят над фото или градиентом. Выглядит дорого и технологично.</p></div><span class="rf-where">Claude · Claude Design</span></div>
     <div class="rf-grid"><button class="rf-card" type="button" data-src="refs/22.jpg" aria-label="Открыть референс"><img src="refs/22.jpg" alt="Референс: стекло и карточки" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/5.jpg" aria-label="Открыть референс"><img src="refs/5.jpg" alt="Референс: стекло и карточки" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/11.jpg" aria-label="Открыть референс"><img src="refs/11.jpg" alt="Референс: стекло и карточки" loading="lazy"></button></div>
-    <div class="prompt"><div class="prompt-top"><span>Забрать приём · Стекло и карточки</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Сверстай слайд 1080×1350 в стиле «стекло».
-Фон: [фото или мягкий градиент из моих цветов].
-Поверх — 3 полупрозрачные карточки с размытием фона,
-тонкой светлой обводкой и скруглением 28 px.
-На карточках: [заголовок], [3 коротких пункта], [кнопка].
-Крупный заголовок по центру, много воздуха.</pre></div>
+    <div class="links"><button class="btn pink rf-get" type="button">Скопировать универсальный промпт <svg><use href="#arrow"/></svg></button></div>
   </div>
   <div class="rf-group" hidden data-rf="type">
     <div class="rf-head"><span class="rf-n">05</span><div><h3>Крупная типографика</h3><p>Заголовок — главный герой: огромный, поверх фото или вместо него. Одна сильная картинка и одна фраза.</p></div><span class="rf-where">Claude · ChatGPT</span></div>
     <div class="rf-grid"><button class="rf-card" type="button" data-src="refs/9.jpg" aria-label="Открыть референс"><img src="refs/9.jpg" alt="Референс: крупная типографика" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/8.jpg" aria-label="Открыть референс"><img src="refs/8.jpg" alt="Референс: крупная типографика" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/17.jpg" aria-label="Открыть референс"><img src="refs/17.jpg" alt="Референс: крупная типографика" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/72.jpg" aria-label="Открыть референс"><img src="refs/72.jpg" alt="Референс: крупная типографика" loading="lazy"></button></div>
-    <div class="prompt"><div class="prompt-top"><span>Забрать приём · Крупная типографика</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Сделай обложку поста 1080×1350.
-Фото: [один крупный объект на светлом фоне] — сгенерируй через Higgsfield
-или возьми моё.
-Заголовок «[до 8 слов]» — очень крупно, в 2–3 строки, от края до края.
-Одна строка пояснения на цветной плашке [HEX].
-Больше ничего: ни иконок, ни рамок.</pre></div>
+    <div class="links"><button class="btn pink rf-get" type="button">Скопировать универсальный промпт <svg><use href="#arrow"/></svg></button></div>
   </div>
   <div class="rf-group" hidden data-rf="deck">
     <div class="rf-head"><span class="rf-n">06</span><div><h3>Презентации и сайты</h3><p>Крупные скруглённые блоки, один акцентный цвет, заголовок-вывод и одна картинка на слайд.</p></div><span class="rf-where">Claude Design · Canva</span></div>
     <div class="rf-grid"><button class="rf-card" type="button" data-src="refs/16.jpg" aria-label="Открыть референс"><img src="refs/16.jpg" alt="Референс: презентации и сайты" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/19.jpg" aria-label="Открыть референс"><img src="refs/19.jpg" alt="Референс: презентации и сайты" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/15.jpg" aria-label="Открыть референс"><img src="refs/15.jpg" alt="Референс: презентации и сайты" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/18.jpg" aria-label="Открыть референс"><img src="refs/18.jpg" alt="Референс: презентации и сайты" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/20.jpg" aria-label="Открыть референс"><img src="refs/20.jpg" alt="Референс: презентации и сайты" loading="lazy"></button></div>
-    <div class="prompt"><div class="prompt-top"><span>Забрать приём · Презентации и сайты</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Собери презентацию 16:9 в этом духе: [прикрепи референс].
-Возьми из него сетку, скругления блоков и подачу заголовков.
-Цвета и шрифты — мои, из бренд-бука.
-Текст: [вставь план слайдов].
-Сначала покажи титул и один слайд, потом остальные.</pre></div>
+    <div class="links"><button class="btn pink rf-get" type="button">Скопировать универсальный промпт <svg><use href="#arrow"/></svg></button></div>
   </div>
   <div class="rf-group" hidden data-rf="feed">
     <div class="rf-head"><span class="rf-n">07</span><div><h3>Лента и карусель</h3><p>Все слайды — одна семья: общая палитра, шрифт и сетка. Листаешь — и видно, что это один автор.</p></div><span class="rf-where">Claude · Canva</span></div>
     <div class="rf-grid"><button class="rf-card" type="button" data-src="refs/12.jpg" aria-label="Открыть референс"><img src="refs/12.jpg" alt="Референс: лента и карусель" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/23.jpg" aria-label="Открыть референс"><img src="refs/23.jpg" alt="Референс: лента и карусель" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/13.jpg" aria-label="Открыть референс"><img src="refs/13.jpg" alt="Референс: лента и карусель" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/62.jpg" aria-label="Открыть референс"><img src="refs/62.jpg" alt="Референс: лента и карусель" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/66.jpg" aria-label="Открыть референс"><img src="refs/66.jpg" alt="Референс: лента и карусель" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/68.jpg" aria-label="Открыть референс"><img src="refs/68.jpg" alt="Референс: лента и карусель" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/78.jpg" aria-label="Открыть референс"><img src="refs/78.jpg" alt="Референс: лента и карусель" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/80.jpg" aria-label="Открыть референс"><img src="refs/80.jpg" alt="Референс: лента и карусель" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/64.jpg" aria-label="Открыть референс"><img src="refs/64.jpg" alt="Референс: лента и карусель" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/69.jpg" aria-label="Открыть референс"><img src="refs/69.jpg" alt="Референс: лента и карусель" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/76.jpg" aria-label="Открыть референс"><img src="refs/76.jpg" alt="Референс: лента и карусель" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/65.jpg" aria-label="Открыть референс"><img src="refs/65.jpg" alt="Референс: лента и карусель" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/67.jpg" aria-label="Открыть референс"><img src="refs/67.jpg" alt="Референс: лента и карусель" loading="lazy"></button></div>
-    <div class="prompt"><div class="prompt-top"><span>Забрать приём · Лента и карусель</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Сделай серию из 6 слайдов 1080×1350 в одном стиле.
-Общая палитра: [HEX], один шрифт для заголовков, один для текста.
-Чередуй три макета: фото на весь слайд, текст на светлом фоне,
-коллаж из 2–3 фото с подписями от руки.
-Темы слайдов: [список]. Покажи все шесть рядом одной картинкой.</pre></div>
+    <div class="links"><button class="btn pink rf-get" type="button">Скопировать универсальный промпт <svg><use href="#arrow"/></svg></button></div>
   </div>
   <div class="rf-group" hidden data-rf="ad1">
     <div class="rf-head"><span class="rf-n">08</span><div><h3>Товар в неожиданной упаковке</h3><p>Продукт показан через знакомый предмет: блистер таблеток, диск телефона, автомат с игрушками, чек, лента из принтера. Узнаётся сразу — и запоминается.</p></div><span class="rf-where">Higgsfield · ChatGPT</span></div>
     <div class="rf-grid"><button class="rf-card" type="button" data-src="refs/43.jpg" aria-label="Открыть референс"><img src="refs/43.jpg" alt="Референс: товар в неожиданной упаковке" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/50.jpg" aria-label="Открыть референс"><img src="refs/50.jpg" alt="Референс: товар в неожиданной упаковке" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/54.jpg" aria-label="Открыть референс"><img src="refs/54.jpg" alt="Референс: товар в неожиданной упаковке" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/61.jpg" aria-label="Открыть референс"><img src="refs/61.jpg" alt="Референс: товар в неожиданной упаковке" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/49.jpg" aria-label="Открыть референс"><img src="refs/49.jpg" alt="Референс: товар в неожиданной упаковке" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/48.jpg" aria-label="Открыть референс"><img src="refs/48.jpg" alt="Референс: товар в неожиданной упаковке" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/42.jpg" aria-label="Открыть референс"><img src="refs/42.jpg" alt="Референс: товар в неожиданной упаковке" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/51.jpg" aria-label="Открыть референс"><img src="refs/51.jpg" alt="Референс: товар в неожиданной упаковке" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/70.jpg" aria-label="Открыть референс"><img src="refs/70.jpg" alt="Референс: товар в неожиданной упаковке" loading="lazy"></button></div>
-    <div class="prompt"><div class="prompt-top"><span>Забрать приём · Товар в неожиданной упаковке</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Сделай рекламный креатив 4:5 в приёме «товар в неожиданной упаковке».
-Товар: [что рекламирую] — фото во вложении, сам товар не меняй.
-Упаковка-метафора: [блистер / автомат с игрушками / чек / диск телефона /
-аварийный ящик «разбей стекло»].
-Одна короткая фраза на предмете: «[до 5 слов]».
-Фон однотонный [HEX], студийный свет, реалистичный 3D-рендер.
-Без чужих логотипов.</pre></div>
+    <div class="links"><button class="btn pink rf-get" type="button">Скопировать универсальный промпт <svg><use href="#arrow"/></svg></button></div>
   </div>
   <div class="rf-group" hidden data-rf="ad2">
     <div class="rf-head"><span class="rf-n">09</span><div><h3>Сюр с человеком</h3><p>Человек в невозможной ситуации: голова в лотке, мышь размером с каску, рука достаёт героя с конвейера. Абсурд показывает боль клиента лучше слов.</p></div><span class="rf-where">Higgsfield · ChatGPT</span></div>
     <div class="rf-grid"><button class="rf-card" type="button" data-src="refs/44.jpg" aria-label="Открыть референс"><img src="refs/44.jpg" alt="Референс: сюр с человеком" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/47.jpg" aria-label="Открыть референс"><img src="refs/47.jpg" alt="Референс: сюр с человеком" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/59.jpg" aria-label="Открыть референс"><img src="refs/59.jpg" alt="Референс: сюр с человеком" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/60.jpg" aria-label="Открыть референс"><img src="refs/60.jpg" alt="Референс: сюр с человеком" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/52.jpg" aria-label="Открыть референс"><img src="refs/52.jpg" alt="Референс: сюр с человеком" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/45.jpg" aria-label="Открыть референс"><img src="refs/45.jpg" alt="Референс: сюр с человеком" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/55.jpg" aria-label="Открыть референс"><img src="refs/55.jpg" alt="Референс: сюр с человеком" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/57.jpg" aria-label="Открыть референс"><img src="refs/57.jpg" alt="Референс: сюр с человеком" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/77.jpg" aria-label="Открыть референс"><img src="refs/77.jpg" alt="Референс: сюр с человеком" loading="lazy"></button></div>
-    <div class="prompt"><div class="prompt-top"><span>Забрать приём · Сюр с человеком</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Сделай рекламный креатив 4:5 в сюрреалистичном приёме.
-Мысль, которую показываю: [боль или желание клиента одной фразой].
-Сцена: человек [в какой невозможной ситуации], остальное реалистично.
-Свет студийный, фон чистый [HEX].
-Сверху место под заголовок «[до 6 слов]», текст на картинке не рисуй.
-Лицо — вымышленный человек, не похожий на известных людей.</pre></div>
+    <div class="links"><button class="btn pink rf-get" type="button">Скопировать универсальный промпт <svg><use href="#arrow"/></svg></button></div>
   </div>
   <div class="rf-group" hidden data-rf="ad3">
     <div class="rf-head"><span class="rf-n">10</span><div><h3>Наружная реклама</h3><p>Тот же креатив, но в городе: на 3D-экране здания, в вагоне метро, у эскалатора. Так показывают масштаб бренда — даже если щитов пока нет.</p></div><span class="rf-where">Higgsfield · ChatGPT</span></div>
     <div class="rf-grid"><button class="rf-card" type="button" data-src="refs/56.jpg" aria-label="Открыть референс"><img src="refs/56.jpg" alt="Референс: наружная реклама" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/53.jpg" aria-label="Открыть референс"><img src="refs/53.jpg" alt="Референс: наружная реклама" loading="lazy"></button><button class="rf-card" type="button" data-src="refs/58.jpg" aria-label="Открыть референс"><img src="refs/58.jpg" alt="Референс: наружная реклама" loading="lazy"></button></div>
-    <div class="prompt"><div class="prompt-top"><span>Забрать приём · Наружная реклама</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Сделай мокап наружной рекламы с моим креативом.
-Креатив во вложении — помести его без изменений.
-Место: [рекламный щит в метро / 3D-экран на углу здания / рама у эскалатора].
-Реалистичное фото, естественный свет, лёгкая перспектива.
-Вариант 2: 3D-экран, где объект с креатива выходит за рамку.
-Формат 4:5.</pre></div>
+    <div class="links"><button class="btn pink rf-get" type="button">Скопировать универсальный промпт <svg><use href="#arrow"/></svg></button></div>
   </div>
   <div class="note b"><svg><use href="#info"/></svg><span>Это чужие работы — они здесь для вдохновения. Бери <b>приём</b>, а не картинку: свой текст, свой продукт, свои цвета.</span></div>
   <div class="next"><button class="btn" data-go="8" type="button">← Папка «Промпты»</button><button class="btn pink" data-go="1" type="button">Урок 1 · как собрать свои референсы <svg><use href="#arrow"/></svg></button></div>
 </section>
 
-<div class="rf-box" id="rfBox" hidden><button class="rf-x" type="button" aria-label="Закрыть">×</button><button class="rf-nav prev" type="button" aria-label="Назад">‹</button><img alt=""><button class="rf-nav next" type="button" aria-label="Вперёд">›</button></div>
+<div class="rf-box" id="rfBox" hidden><button class="rf-x" type="button" aria-label="Закрыть">×</button><button class="rf-nav prev" type="button" aria-label="Назад">‹</button><img alt=""><button class="rf-nav next" type="button" aria-label="Вперёд">›</button><button class="btn pink rf-get rf-boxget" type="button">Скопировать промпт под эту картинку</button></div>
 
 <!-- ================= GLOSSARY ================= -->
 <section class="lesson" data-lesson="6" id="l6">
@@ -2228,6 +2185,14 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
  document.getElementById('rfBack').addEventListener('click',function(){gs.forEach(function(g){g.hidden=true});st.forEach(function(x){x.classList.remove('on')});tools.hidden=true;hint.hidden=false;
   document.querySelector('#l10 .rf-board').scrollIntoView({behavior:'smooth',block:'center'})});
  if(window.matchMedia&&matchMedia('(hover:none)').matches){var k=0;setInterval(function(){if(!document.getElementById('l10').classList.contains('on'))return;st.forEach(function(x,i){x.classList.toggle('peek',i===k%st.length)});k++},1600)}
+})();
+</script>
+<script>
+(function(){var pre=document.querySelector('#rfUni pre');if(!pre)return;
+ document.addEventListener('click',function(e){var b=e.target.closest('.rf-get');if(!b)return;e.stopPropagation();
+  var t=pre.innerText.trim(),ta=document.createElement('textarea');
+  function done(){var el=document.getElementById('toast');if(el){el.textContent='Промпт скопирован ♡';el.classList.add('show');setTimeout(function(){el.classList.remove('show')},1500)}}
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,done)}else{ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy')}catch(x){}ta.remove();done()}},true);
 })();
 </script>
 </body>
