@@ -1298,7 +1298,7 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
       <div class="learn-i"><em>04</em><b>Собирать карусели под ключ</b><p>Выбрать тип и обложку, написать текст, сверстать, оживить слайд и написать подпись.</p></div>
       <div class="learn-i"><em>05</em><b>Делать презентации из текста</b><p>Превращать свой текст в слайды и доводить их в Claude Design.</p></div>
       <div class="learn-i"><em>06</em><b>Упаковывать продукт</b><p>Делать мокапы и рекламные креативы по готовым промптам.</p></div>
-      <div class="learn-i"><em>07</em><b>Выкладывать из чата</b><p>Подключить Ару и публиковать карусели по расписанию с превью и подтверждением.</p></div>
+      <div class="learn-i"><em>07</em><b>Выкладывать из чата</b><p>Подключить бота Ару к Claude и ставить посты в ленту по расписанию.</p></div>
     </div>
   </div>
   <div class="need-h"><span class="step-tag">Что понадобится</span><p>Открой и войди заранее — тогда уроки пойдут без остановок.</p></div>
@@ -1671,42 +1671,38 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 <!-- ================= LESSON 6 ================= -->
 <section class="lesson" data-lesson="11" id="l11">
   <div class="sec-head"><div class="key num b">06</div><div><span class="kicker">Урок 6 из 6 · 20–30 минут</span><h2>Авто<em>постинг</em></h2></div></div>
-  <p class="sub">Собрал карусель — <b>выложи её прямо из чата.</b></p>
+  <p class="sub">Подключи Ару к Claude — <b>и выкладывай посты прямо из чата.</b></p>
 
-  <div class="block"><span class="step-tag">Сначала · Зачем это</span>
-<div class="card glass b rv"><h3><span class="dot b"></span>Claude сам в Instagram не выкладывает</h3><p>У нейросети нет доступа к твоим соцсетям. Нужен сервис-посредник, который держит подключённые аккаунты. Здесь это <b>Ара</b>: ты просишь в чате — она публикует.</p><div class="tbl-wrap"><table class="tbl"><tr><th>Что умеет Ара</th><th>Подробнее</th></tr><tr><td><b>Публиковать</b></td><td>карусель, фото, рилс и сторис — в Instagram, TikTok и YouTube</td></tr><tr><td><b>По расписанию</b></td><td>сейчас или в назначенный день и час</td></tr><tr><td><b>Собрать карусель</b></td><td>из темы или фактов: текст, фоны и готовые слайды, 3–15 штук</td></tr><tr><td><b>Пробный рилс</b></td><td>сначала показывается не подписчикам. Только для рилсов и от 1000 подписчиков</td></tr></table></div></div>
+  <div class="block"><span class="step-tag">Сначала · Как это устроено</span>
+<div class="card glass b rv"><h3><span class="dot b"></span>Claude → Ара → Instagram</h3><p>Claude сам в соцсети не выкладывает. <b>Ара</b> — бот в Telegram, который держит твои аккаунты и публикует посты. Подключаешь Ару к Claude как коннектор — и ставишь посты в ленту прямо из чата.</p><div class="pills"><span>готовая карусель</span><span>→ Claude</span><span>→ Ара</span><span>→ лента</span></div></div>
   </div>
-  <div class="block"><span class="step-tag">Шаг 1 · Подключи Ару</span>
-<div class="card glass rv"><ol class="steps"><li>Зарегистрируйся в <b>Аре</b> и подключи там свои аккаунты соцсетей. Вход в Instagram делаешь <b>вручную</b> — нейросеть пароль не видит.</li><li>В Claude: <b>Customize → Connectors → Add custom connector</b>. Адрес сервера возьми в личном кабинете Ары.</li><li>В ChatGPT: <b>Настройки → Приложения</b> — добавь Ару тем же адресом.</li><li>Проверь в новом чате:</li></ol><div class="prompt"><div class="prompt-top"><span>Проверка</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Какие аккаунты подключены в Аре и сколько осталось кредитов?</pre></div><div class="note b"><svg><use href="#info"/></svg><span>Новые аккаунты соцсетей подключаются только в самой Аре, из чата это сделать нельзя.</span></div></div>
+  <div class="block"><span class="step-tag">Шаг 1 · Настрой Ару в Telegram</span>
+<div class="card glass rv"><ol class="steps"><li>Открой бота <b>Ара</b> в Telegram и нажми <b>Start</b>.</li><li>Подключи в нём свой аккаунт <b>Instagram</b>. Вход делаешь вручную — пароль никому не передаётся.</li><li>Найди в боте раздел подключения к Claude и <b>скопируй адрес сервера</b> (MCP).</li></ol></div>
   </div>
-  <div class="block"><span class="step-tag">Шаг 2 · Выложи карусель</span>
-<div class="card rv"><ol class="steps"><li>Собери карусель и сохрани слайды в <b>PNG</b> — <a href="#l4" data-go="4"><b>Урок 4</b></a>.</li><li>Прикрепи слайды по порядку и отправь промпт.</li><li>Ара покажет <b>превью</b>: куда, когда и с какой подписью. Прочитай его.</li><li>Ответь <b>«да»</b> — только после этого пост уйдёт.</li></ol><div class="prompt"><div class="prompt-top"><span>Опубликовать карусель</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Через Ару опубликуй эти слайды каруселью в Instagram, аккаунт [ник].
+  <div class="block"><span class="step-tag">Шаг 2 · Подключи Ару к Claude</span>
+<div class="card rv"><ol class="steps"><li>В Claude открой <b>Customize → Connectors</b>.</li><li>Нажми <b>Add custom connector</b>.</li><li>Вставь адрес из бота и подтверди вход.</li><li>В новом чате проверь, что Ара <b>включена</b> в списке коннекторов.</li></ol><div class="prompt"><div class="prompt-top"><span>Проверка</span><button class="copy" type="button">Скопировать</button></div>
+<pre>Какие аккаунты подключены в Аре?</pre></div><div class="links"><a class="btn pink" href="https://claude.ai/customize" target="_blank" rel="noopener">Открыть коннекторы <svg><use href="#arrow"/></svg></a></div><div class="note b"><svg><use href="#info"/></svg><span>Claude назвал твой аккаунт — всё работает. Не назвал — вернись в бота и проверь, что Instagram подключён.</span></div></div>
+  </div>
+  <div class="block"><span class="step-tag">Шаг 3 · Выложи пост в ленту</span>
+<div class="card glass rv"><ol class="steps"><li>Прикрепи в чат готовые слайды <b>по порядку</b>.</li><li>Отправь промпт.</li><li>Прочитай <b>превью</b>: аккаунт, время, подпись.</li><li>Ответь <b>«да»</b> — после этого пост уйдёт.</li></ol><div class="prompt"><div class="prompt-top"><span>Опубликовать карусель</span><button class="copy" type="button">Скопировать</button></div>
+<pre>Через Ару опубликуй эти слайды каруселью в ленту Instagram, аккаунт [ник].
 Порядок слайдов — как во вложении.
 Подпись: [вставь подпись].
-Когда: [сейчас / дата и время, часовой пояс Москва].
-Сначала покажи превью и ничего не публикуй, пока я не отвечу «да».</pre></div><div class="prompt"><div class="prompt-top"><span>Запланировать на неделю</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Через Ару запланируй 3 поста на эту неделю в Instagram, аккаунт [ник]:
+Сначала покажи превью и ничего не публикуй, пока я не отвечу «да».</pre></div></div>
+  </div>
+  <div class="block"><span class="step-tag">Шаг 4 · Настрой автопостинг</span>
+<div class="card rv"><p>Один раз отдаёшь посты на неделю — дальше они выходят сами.</p><div class="prompt"><div class="prompt-top"><span>Расписание на неделю</span><button class="copy" type="button">Скопировать</button></div>
+<pre>Через Ару запланируй посты в ленту Instagram, аккаунт [ник]:
 вторник 12:00, четверг 12:00, суббота 11:00 по Москве.
-Посты — во вложении, подписи ниже по порядку: [подписи].
-Покажи расписание и превью каждого поста. Публикуй только после моего «да».</pre></div></div>
-  </div>
-  <div class="block"><span class="step-tag">Шаг 3 · Карусель одной командой</span>
-<div class="card glass rv"><p>Нет времени верстать — Ара соберёт карусель сама. Стиль выбирается из её готовых, а не из твоего бренд-бука.</p><div class="prompt"><div class="prompt-top"><span>Карусель из фактов</span><button class="copy" type="button">Скопировать</button></div>
-<pre>Через Ару сделай карусель на [8] слайдов, формат 4:5.
-Тема: [тема]. Факты, из которых её собрать: [вставь факты].
-Ничего сверх этих фактов не добавляй.
-Перед запуском скажи, сколько кредитов это стоит.
-Покажи слайды и подпись. Не публикуй без моего «да».</pre></div><div class="note b"><svg><use href="#info"/></svg><span>Генерация тратит <b>кредиты Ары</b>. Нужен свой стиль — собери карусель в Claude, а Аре оставь только публикацию.</span></div></div>
-  </div>
-  <div class="block"><span class="step-tag">Шаг 4 · Правила безопасности</span>
-<div class="card rv"><div class="tbl-wrap"><table class="tbl"><tr><th>Правило</th><th>Почему</th></tr><tr><td><b>Всегда проси превью</b></td><td>опубликованный пост обратно не вернёшь — его уже увидели</td></tr><tr><td><b>Публикация только после «да»</b></td><td>нейросеть не должна решать за тебя, что и когда выходит</td></tr><tr><td><b>Проверяй аккаунт</b></td><td>если подключено несколько, пост может уйти не туда</td></tr><tr><td><b>Время пиши с часовым поясом</b></td><td>иначе пост выйдет на несколько часов раньше или позже</td></tr></table></div></div>
+Посты — во вложении, подписи по порядку: [подписи].
+Покажи расписание и превью каждого поста.
+Ставь в расписание только после моего «да».</pre></div><div class="prompt"><div class="prompt-top"><span>Что уже запланировано</span><button class="copy" type="button">Скопировать</button></div>
+<pre>Покажи, какие посты стоят в расписании Ары на эту неделю.</pre></div><div class="note b"><svg><use href="#info"/></svg><span>Время всегда пиши <b>с часовым поясом</b>. Опубликованный пост обратно не вернёшь — поэтому превью и «да» перед каждым.</span></div></div>
   </div>
   <div class="tracker rv at-end" data-tracker="11">
     <div class="tr-head"><h3>📍 Трекер урока</h3><span class="tr-count"><b>0</b>/4</span></div>
     <div class="tr-bar"><i></i></div>
-    <div class="checks"><button class="check" data-check="11-conn" type="button"><span>Ара подключена</span><span class="sw"></span></button><button class="check" data-check="11-acc" type="button"><span>Аккаунт соцсети подключён в Аре</span><span class="sw"></span></button><button class="check" data-check="11-prev" type="button"><span>Превью поста проверено</span><span class="sw"></span></button><button class="check" data-check="11-post" type="button"><span>Первая карусель опубликована</span><span class="sw"></span></button></div>
+    <div class="checks"><button class="check" data-check="11-acc" type="button"><span>Instagram подключён в Аре</span><span class="sw"></span></button><button class="check" data-check="11-conn" type="button"><span>Ара подключена к Claude</span><span class="sw"></span></button><button class="check" data-check="11-post" type="button"><span>Первый пост опубликован</span><span class="sw"></span></button><button class="check" data-check="11-plan" type="button"><span>Расписание на неделю стоит</span><span class="sw"></span></button></div>
   </div>
 
   <div class="next"><button class="btn" data-go="5" type="button">← Урок 5</button><button class="btn pink" data-go="7" type="button">Папка «Скиллы» <svg><use href="#arrow"/></svg></button></div>
