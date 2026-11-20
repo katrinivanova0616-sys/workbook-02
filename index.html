@@ -1082,6 +1082,16 @@ figcaption b{display:block;font:800 14px Manrope,sans-serif;color:var(--ink);mar
 @media (max-width:720px){.learn-g{gap:9px}.learn-i{padding:13px 12px;border-radius:18px}.learn-i b{font-size:14.5px}.learn-i p{font-size:12.5px}}
 .rf-boxget{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);white-space:nowrap}
 .rf-group .links{margin-top:6px}
+/* ideas: calm grid, no jitter */
+.rf-grid{columns:auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.rf-group .rf-card,.rf-group .rf-card:nth-child(odd),.rf-group .rf-card:nth-child(even){margin:0;transform:none;animation:none;position:static;aspect-ratio:4/5;overflow:hidden;transition:translate .3s ease,box-shadow .3s ease}
+.rf-group .rf-card img{width:100%;height:100%;object-fit:cover;transition:scale .5s ease}
+.rf-group .rf-card:hover{transform:none;translate:0 -4px;position:static;z-index:auto;box-shadow:0 0 0 1px rgba(20,20,40,.05),0 20px 40px rgba(255,46,151,.2)}
+.rf-group .rf-card:hover img{scale:1.03}
+.rf-group{animation:none}
+@media (max-width:980px){.rf-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:720px){.rf-grid{grid-template-columns:1fr 1fr;gap:10px}.rf-group .rf-card{margin:0}}
+@media (hover:none){.rf-group .rf-card:hover{translate:none}.rf-group .rf-card:hover img{scale:1}}
 </style>
 </head>
 <body>
